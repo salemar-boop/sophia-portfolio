@@ -42,8 +42,8 @@ export default function App() {
         <aside className="pf-hero-panel" aria-label="Highlights">
           <p>
             <strong>Featured work:</strong> Webzine through packaging, clock,
-            typefaces, port PDFs, a banana bread cookbook spread, and more—tap a
-            tile to open it; PDFs embed inline with links to open in a new tab.
+            typefaces, port PDFs, cookbook spread, DSGN 255 magazine layout, and
+            more—tap a tile; PDFs embed inline with links to open in a new tab.
           </p>
         </aside>
       </section>

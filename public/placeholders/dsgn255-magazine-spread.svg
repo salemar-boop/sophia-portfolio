@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#0a0a0a"/>
+  <rect x="140" y="120" width="420" height="560" fill="#141414" stroke="#e8a598" stroke-width="1.5" opacity="0.9"/>
+  <rect x="640" y="120" width="420" height="560" fill="#141414" stroke="#f5c4b8" stroke-width="1.5" opacity="0.9"/>
+  <text x="350" y="420" text-anchor="middle" font-family="Georgia, serif" font-size="120" fill="#e8a598" opacity="0.85">10</text>
+  <text x="850" y="400" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" fill="#f5c4b8" letter-spacing="0.2em">ITEMS</text>
+  <text x="600" y="720" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#a89893" letter-spacing="0.22em">MAGAZINE SPREAD · DSGN 255 · PROJECT 2</text>
+</svg>

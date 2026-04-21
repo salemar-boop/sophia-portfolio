@@ -118,6 +118,18 @@
         "kind": "pdf",
         "src": "/documents/cookbook-banana-bread.pdf"
       }
+    },
+    {
+      "id": "dsgn255-magazine-10-items",
+      "title": "Magazine spread — 10 items I would use",
+      "tagline": "DSGN 255, Project 2 — editorial layout (PDF).",
+      "description": "For this assignment I designed a magazine-style spread around ten objects I would actually use: pacing, hierarchy, and image treatment so it reads like a real editorial feature rather than a flat list. The PDF is the final magazine file from class.",
+      "coverImage": "/placeholders/dsgn255-magazine-spread.svg",
+      "gallery": [],
+      "media": {
+        "kind": "pdf",
+        "src": "/documents/dsgn255-magazine-10-items.pdf"
+      }
     }
   ]
 }

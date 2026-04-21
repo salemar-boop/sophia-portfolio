@@ -130,6 +130,18 @@
         "kind": "pdf",
         "src": "/documents/dsgn255-magazine-10-items.pdf"
       }
+    },
+    {
+      "id": "bodoni-type-poster",
+      "title": "Bodoni type poster",
+      "tagline": "Print poster celebrating the Bodoni family (PDF).",
+      "description": "A poster built around the Bodoni typeface: hierarchy, negative space, and detail that nod to its Didone roots while staying readable at a glance. The PDF is the final print file.",
+      "coverImage": "/placeholders/bodoni-poster.svg",
+      "gallery": [],
+      "media": {
+        "kind": "pdf",
+        "src": "/documents/bodoni-type-poster.pdf"
+      }
     }
   ]
 }

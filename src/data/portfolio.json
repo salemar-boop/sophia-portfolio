@@ -1,0 +1,37 @@
+{
+  "profile": {
+    "name": "Sophia Alemar",
+    "title": "Graphic designer · Maryland-born · 19",
+    "bio": "I'm Sophia Alemar — I'm 19 and from Maryland. Art has been part of my life for as long as I can remember; even when I was little and did not have the vocabulary for it yet, I loved exploring new ways to express myself. I applied to study graphic design almost on a whim, and it turned out to be a genuine fit. It is a space where I can be both creative and professional, keep my hobbies close, and still protect my energy so I do not burn out.",
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/salemar-boop" },
+      { "label": "Webzine (live)", "url": "https://salemar-boop.github.io/project1/" }
+    ]
+  },
+  "projects": [
+    {
+      "id": "webzine-project-1",
+      "title": "Webzine — Project 1",
+      "tagline": "Video preview on the grid; full interactive piece on GitHub Pages.",
+      "description": "This is my webzine: an interactive editorial layout you can explore in the browser. The tile on my portfolio plays a short preview clip; open the modal to watch it larger with controls, or use the button below to jump straight into the full experience.",
+      "coverImage": "/placeholders/blossom-1.svg",
+      "coverVideo": "/videos/webzine-preview.mp4",
+      "liveUrl": "https://salemar-boop.github.io/project1/",
+      "gallery": [],
+      "media": {
+        "kind": "video",
+        "src": "/videos/webzine-preview.mp4",
+        "poster": "/placeholders/blossom-1.svg"
+      }
+    },
+    {
+      "id": "visual-studies",
+      "title": "Visual studies",
+      "tagline": "Placeholder for your next case study",
+      "description": "Swap this card for another class project, client piece, or personal experiment. Add a cover image under public/ and point coverImage (and optional coverVideo) to it in portfolio.json.",
+      "coverImage": "/placeholders/blossom-2.svg",
+      "gallery": ["/placeholders/blossom-3.svg"],
+      "media": { "kind": "none" }
+    }
+  ]
+}

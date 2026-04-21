@@ -1,0 +1,540 @@
+.pf-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.25rem 4rem;
+}
+
+@media (min-width: 768px) {
+  .pf-page {
+    padding: 0 2rem 5rem;
+  }
+}
+
+.pf-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  margin: 0 -1.25rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, rgba(5, 5, 5, 0.92), rgba(5, 5, 5, 0.65));
+  backdrop-filter: blur(14px);
+}
+
+@media (min-width: 768px) {
+  .pf-header {
+    margin: 0 -2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.pf-mark {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-size: 1.05rem;
+}
+
+.pf-mark span {
+  color: var(--accent);
+}
+
+.pf-nav {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.pf-nav a {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.25s ease;
+}
+
+.pf-nav a:hover {
+  color: var(--text);
+  border-color: rgba(220, 20, 60, 0.35);
+  box-shadow: 0 0 18px rgba(220, 20, 60, 0.18);
+}
+
+.pf-hero {
+  padding: 2.75rem 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .pf-hero {
+    padding: 4rem 0 2rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 2.5rem;
+    align-items: end;
+  }
+}
+
+.pf-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.68rem;
+  color: var(--accent-soft);
+  margin: 0 0 0.75rem;
+}
+
+.pf-hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1.08;
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+
+.pf-hero h1 em {
+  font-style: italic;
+  color: #fff0f5;
+}
+
+.pf-lede {
+  margin: 0;
+  color: var(--text-muted);
+  max-width: 36rem;
+  font-size: 1rem;
+}
+
+.pf-hero-panel {
+  margin-top: 2rem;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.35rem;
+  background: linear-gradient(145deg, rgba(220, 20, 60, 0.12), rgba(12, 12, 12, 0.9));
+  border: 1px solid rgba(220, 20, 60, 0.22);
+  box-shadow: var(--shadow-soft), 0 0 60px rgba(220, 20, 60, 0.12);
+}
+
+@media (min-width: 768px) {
+  .pf-hero-panel {
+    margin-top: 0;
+  }
+}
+
+.pf-hero-panel p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.pf-hero-panel strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.pf-section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  margin: 3rem 0 1.25rem;
+}
+
+.pf-section-title span {
+  color: var(--accent);
+}
+
+.pf-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .pf-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .pf-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+.pf-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--bg-elevated);
+  text-align: left;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.25s ease;
+}
+
+.pf-card:hover,
+.pf-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(220, 20, 60, 0.45);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55), 0 0 40px rgba(220, 20, 60, 0.2);
+  outline: none;
+}
+
+.pf-card-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.pf-card-media img,
+.pf-card-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 0.6s ease, filter 0.4s ease;
+  filter: saturate(1.05) contrast(1.05);
+}
+
+.pf-card:hover .pf-card-media img,
+.pf-card:hover .pf-card-media video {
+  transform: scale(1.06);
+}
+
+.pf-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 20%, rgba(5, 5, 5, 0.85));
+  opacity: 0.85;
+  transition: opacity 0.35s ease;
+}
+
+.pf-card:hover .pf-card-overlay {
+  opacity: 0.65;
+}
+
+.pf-card-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1rem 1.1rem 1.15rem;
+}
+
+.pf-card-kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+  margin: 0 0 0.35rem;
+}
+
+.pf-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.pf-about {
+  margin-top: 3.5rem;
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: linear-gradient(160deg, rgba(44, 27, 24, 0.45), rgba(10, 10, 10, 0.92));
+  box-shadow: var(--shadow-soft);
+}
+
+@media (min-width: 768px) {
+  .pf-about {
+    padding: 2.5rem 2.25rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+  }
+}
+
+.pf-about h2 {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  margin: 0 0 0.75rem;
+}
+
+.pf-about p {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+}
+
+.pf-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.pf-link-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(220, 20, 60, 0.35);
+  color: var(--text);
+  font-size: 0.9rem;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+
+.pf-link-pill:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 22px rgba(220, 20, 60, 0.25);
+  transform: translateY(-1px);
+}
+
+.pf-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  justify-content: space-between;
+}
+
+.pf-modal-root {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: end stretch;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .pf-modal-root {
+    place-items: center;
+    padding: 2rem;
+  }
+}
+
+.pf-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 0%, rgba(220, 20, 60, 0.18), transparent 45%),
+    rgba(2, 2, 2, 0.82);
+  backdrop-filter: blur(10px);
+}
+
+.pf-modal {
+  position: relative;
+  width: 100%;
+  max-height: min(94vh, 900px);
+  overflow: auto;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: none;
+  background: linear-gradient(180deg, #111, #070707);
+  box-shadow: var(--shadow-soft);
+  animation: pf-rise 0.45s ease forwards;
+}
+
+@media (min-width: 768px) {
+  .pf-modal {
+    max-width: 960px;
+    border-radius: var(--radius-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+
+@keyframes pf-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.pf-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.25rem 0.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(8, 8, 8, 0.98), rgba(8, 8, 8, 0.65));
+  backdrop-filter: blur(8px);
+}
+
+@media (min-width: 768px) {
+  .pf-modal-header {
+    padding: 1.5rem 1.75rem 0.75rem;
+  }
+}
+
+.pf-modal-header h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  margin: 0.15rem 0 0;
+}
+
+.pf-modal-close {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  width: 2.25rem;
+  height: 2.25rem;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  transition: border-color 0.2s ease, box-shadow 0.25s ease, transform 0.15s ease;
+}
+
+.pf-modal-close:hover {
+  border-color: rgba(220, 20, 60, 0.55);
+  box-shadow: 0 0 18px rgba(220, 20, 60, 0.25);
+}
+
+.pf-modal-close:active {
+  transform: scale(0.95);
+}
+
+.pf-modal-body {
+  padding: 0 1.25rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .pf-modal-body {
+    padding: 0 1.75rem 1.75rem;
+  }
+}
+
+.pf-modal-tagline {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.pf-modal-live {
+  margin: 0 0 1rem;
+}
+
+.pf-modal-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text);
+  background: linear-gradient(120deg, rgba(220, 20, 60, 0.35), rgba(220, 20, 60, 0.12));
+  border: 1px solid rgba(220, 20, 60, 0.55);
+  box-shadow: 0 0 24px rgba(220, 20, 60, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.2s ease;
+}
+
+.pf-modal-cta:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent-soft);
+  box-shadow: 0 0 32px rgba(220, 20, 60, 0.35);
+}
+
+.pf-modal-cta:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+
+.pf-modal-stage {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 1.25rem;
+  background: #000;
+}
+
+.pf-modal-stage img {
+  width: 100%;
+  max-height: 52vh;
+  object-fit: contain;
+  background: #020202;
+}
+
+.pf-video {
+  width: 100%;
+  max-height: min(60vh, 520px);
+  background: #000;
+}
+
+.pf-embed {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.pf-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.pf-modal-copy {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 0 0 1.25rem;
+}
+
+.pf-thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.65rem;
+}
+
+.pf-thumb {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: zoom-in;
+  padding: 0;
+  background: #050505;
+}
+
+.pf-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.pf-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.pf-ripple::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.18), transparent 55%);
+  opacity: 0;
+  transform: scale(0.4);
+  transition: opacity 0.5s ease, transform 0.6s ease;
+}
+
+.pf-ripple:active::after {
+  opacity: 1;
+  transform: scale(1.35);
+  transition: 0s;
+}

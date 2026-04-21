@@ -41,10 +41,9 @@ export default function App() {
         </div>
         <aside className="pf-hero-panel" aria-label="Highlights">
           <p>
-            <strong>Featured work:</strong> Webzine opens to the full site on
-            GitHub Pages; postcards pair a fish animation with the flat card set;
-            hot sauce labels showcase two packaging directions—tap any tile to
-            enlarge it and flip between photos in the modal.
+            <strong>Featured work:</strong> Webzine, postcards, hot sauce
+            packaging, and a Garber-inspired interactive clock—tap any tile to open
+            it larger (and use thumbnails when a project has more than one photo).
           </p>
         </aside>
       </section>

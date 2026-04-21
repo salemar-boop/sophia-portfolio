@@ -46,6 +46,15 @@
       "coverImage": "/images/hotsauce-whimpy.png",
       "gallery": ["/images/hotsauce-velvet.png"],
       "media": { "kind": "none" }
+    },
+    {
+      "id": "ouabh-interactive-clock",
+      "title": "You have to unlock your potential yourself.",
+      "tagline": "Mixed-media clock inspired by Stephanie Garber — Once Upon a Broken Heart.",
+      "description": "This piece is a hand-painted, interactive clock built around a hinged door: you open it to reveal a small painted scene—an apple, a reaching hand, floating papers, and branches against a blue-and-white void—with peach numbers and tiny white sparkles on a matte black face. It is inspired by Stephanie Garber and her path through more than two hundred rejections before the books she wanted to write found their audience. The idea is that progress stays interactive: you keep opening the next door yourself, on your own timeline, for the life you want to build.",
+      "coverImage": "/images/ouabh-interactive-clock.png",
+      "gallery": [],
+      "media": { "kind": "none" }
     }
   ]
 }

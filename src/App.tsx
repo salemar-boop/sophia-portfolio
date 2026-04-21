@@ -41,9 +41,10 @@ export default function App() {
         </div>
         <aside className="pf-hero-panel" aria-label="Highlights">
           <p>
-            <strong>Start with the Webzine tile:</strong> it loops a muted
-            preview on the grid. Tap to open a larger player, then follow the
-            button through to the full interactive site on GitHub Pages.
+            <strong>Featured work:</strong> the Webzine tile links out to the
+            full interactive piece on GitHub Pages. The postcard project loops a
+            fish animation on the grid; open it to watch with controls and see
+            the full printed set laid out together.
           </p>
         </aside>
       </section>

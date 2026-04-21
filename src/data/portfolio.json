@@ -25,13 +25,18 @@
       }
     },
     {
-      "id": "visual-studies",
-      "title": "Visual studies",
-      "tagline": "Placeholder for your next case study",
-      "description": "Swap this card for another class project, client piece, or personal experiment. Add a cover image under public/ and point coverImage (and optional coverVideo) to it in portfolio.json.",
-      "coverImage": "/placeholders/blossom-2.svg",
-      "gallery": ["/placeholders/blossom-3.svg"],
-      "media": { "kind": "none" }
+      "id": "dsgn271-postcards",
+      "title": "Postcards — DSGN 271",
+      "tagline": "Print set + a short fish animation from the same project.",
+      "description": "This project pairs a full postcard series with a small motion piece built from one of the illustrations. The grid tile loops the fish animation so you get a quick sense of the movement; open the project to watch it with sound and controls, then scroll to the flat view to see how the printed cards read together as a set.",
+      "coverImage": "/images/dsgn271-postcards.png",
+      "coverVideo": "/videos/dsgn271-fish-postcard.mp4",
+      "gallery": ["/images/dsgn271-postcards.png"],
+      "media": {
+        "kind": "video",
+        "src": "/videos/dsgn271-fish-postcard.mp4",
+        "poster": "/images/dsgn271-postcards.png"
+      }
     }
   ]
 }

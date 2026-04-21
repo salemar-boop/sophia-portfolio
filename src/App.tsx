@@ -42,9 +42,9 @@ export default function App() {
         <aside className="pf-hero-panel" aria-label="Highlights">
           <p>
             <strong>Featured work:</strong> Webzine through packaging, clock,
-            typefaces, Bodoni poster, port PDFs, cookbook spread, DSGN 255
-            magazine, and more—tap a tile; PDFs embed inline with links to open in
-            a new tab.
+            typefaces, Bodoni poster, Fenty lip gloss poster, port PDFs, cookbook
+            spread, DSGN 255 magazine, and more—tap a tile; PDFs open in the modal
+            with a new-tab link.
           </p>
         </aside>
       </section>

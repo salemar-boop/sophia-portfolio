@@ -142,6 +142,15 @@
         "kind": "pdf",
         "src": "/documents/bodoni-type-poster.pdf"
       }
+    },
+    {
+      "id": "fenty-lip-gloss-poster",
+      "title": "Fenty Beauty — lip gloss poster",
+      "tagline": "Animated-style poster built around Gloss Bomb energy.",
+      "description": "A fan poster for Fenty Beauty lip gloss: diagonal “MADE BY RIHANNA” lettering with a deep green drop shadow, a dashed white frame, plum and pink fields, mint scribbles, glossy lip prints, and the tube and wand framed so the whole piece reads bold and campaign-ready.",
+      "coverImage": "/images/fenty-lip-poster.png",
+      "gallery": [],
+      "media": { "kind": "none" }
     }
   ]
 }

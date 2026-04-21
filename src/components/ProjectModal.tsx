@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import type { Project } from "../types";
 import { toEmbedSrc } from "../utils/embed";
+import { publicUrl } from "../utils/publicUrl";
 
 type Props = {
   project: Project;
@@ -13,10 +14,10 @@ export function ProjectModal({ project, onClose }: Props) {
   const thumbSources = [project.coverImage, ...project.gallery].filter(
     (src, i, arr) => arr.indexOf(src) === i
   );
-  const [activeImage, setActiveImage] = useState(project.coverImage);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    setActiveImage(project.coverImage);
+    setActiveIndex(0);
   }, [project]);
 
   useEffect(() => {
@@ -51,7 +52,9 @@ export function ProjectModal({ project, onClose }: Props) {
     (hasPdf && project.gallery.length > 0) ||
     (hasPdfs && project.gallery.length > 0);
 
-  const pdfSrc = mediaKind === "pdf" ? project.media.src : "";
+  const pdfSrc =
+    mediaKind === "pdf" ? publicUrl(project.media.src) : "";
+  const activeImageUrl = publicUrl(thumbSources[activeIndex] ?? project.coverImage);
 
   return (
     <div className="pf-modal-root" role="presentation">
@@ -125,7 +128,7 @@ export function ProjectModal({ project, onClose }: Props) {
                 <a
                   key={file.src}
                   className="pf-modal-cta"
-                  href={file.src}
+                  href={publicUrl(file.src)}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -146,7 +149,7 @@ export function ProjectModal({ project, onClose }: Props) {
                       <iframe
                         className="pf-pdf-frame pf-pdf-frame--stacked"
                         title={`${project.title}: ${file.label}`}
-                        src={file.src}
+                        src={publicUrl(file.src)}
                       />
                     </div>
                   </section>
@@ -157,8 +160,12 @@ export function ProjectModal({ project, onClose }: Props) {
                 {mediaKind === "video" ? (
                   <video
                     className="pf-video"
-                    src={project.media.src}
-                    poster={project.media.poster}
+                    src={publicUrl(project.media.src)}
+                    poster={
+                      project.media.poster
+                        ? publicUrl(project.media.poster)
+                        : undefined
+                    }
                     controls
                     playsInline
                   />
@@ -182,7 +189,7 @@ export function ProjectModal({ project, onClose }: Props) {
             )
           ) : (
             <div className="pf-modal-stage">
-              <img src={activeImage} alt="" />
+              <img src={activeImageUrl} alt="" />
             </div>
           )}
 
@@ -192,7 +199,7 @@ export function ProjectModal({ project, onClose }: Props) {
               style={{ marginTop: "0.85rem", background: "#030303" }}
             >
               <img
-                src={activeImage}
+                src={activeImageUrl}
                 alt=""
                 style={{ maxHeight: "min(38vh, 360px)", margin: "0 auto" }}
               />
@@ -203,15 +210,15 @@ export function ProjectModal({ project, onClose }: Props) {
 
           {thumbSources.length > 1 ? (
             <div className="pf-thumbs" aria-label="Gallery">
-              {thumbSources.map((src) => (
+              {thumbSources.map((src, i) => (
                 <button
                   key={src}
                   type="button"
                   className="pf-thumb pf-ripple"
-                  onClick={() => setActiveImage(src)}
-                  aria-pressed={src === activeImage}
+                  onClick={() => setActiveIndex(i)}
+                  aria-pressed={i === activeIndex}
                 >
-                  <img src={src} alt="" />
+                  <img src={publicUrl(src)} alt="" />
                 </button>
               ))}
             </div>

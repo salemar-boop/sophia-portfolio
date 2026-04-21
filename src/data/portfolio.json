@@ -37,6 +37,15 @@
         "src": "/videos/dsgn271-fish-postcard.mp4",
         "poster": "/images/dsgn271-postcards.png"
       }
+    },
+    {
+      "id": "hot-sauce-labels",
+      "title": "Hot sauce labels — Whimpy's & Velvet",
+      "tagline": "Two bottle concepts: playful patterning and a moody, editorial treatment.",
+      "description": "I designed the labels for both of these bottles. Whimpy's leans into a soft, handcrafted feel—creamy yellow grounds, lavender type, and a scattered pattern of tiny peppers and bottles. Velvet goes the opposite direction: a dark matte label, tall condensed lettering, and photography with wax, candles, and deep burgundy tones so the pack reads more like a small-batch ritual than a grocery shelf staple.",
+      "coverImage": "/images/hotsauce-whimpy.png",
+      "gallery": ["/images/hotsauce-velvet.png"],
+      "media": { "kind": "none" }
     }
   ]
 }

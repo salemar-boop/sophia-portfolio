@@ -1,7 +1,12 @@
+export type PdfFile = { label: string; src: string };
+
 export type ProjectMedia =
   | { kind: "none" }
   | { kind: "video"; src: string; poster?: string }
-  | { kind: "embed"; src: string };
+  | { kind: "embed"; src: string }
+  | { kind: "pdf"; src: string }
+  /** Multiple PDFs shown together in one project (e.g. companion documents). */
+  | { kind: "pdfs"; files: PdfFile[] };
 
 export type Project = {
   id: string;

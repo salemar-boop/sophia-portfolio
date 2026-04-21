@@ -39,9 +39,19 @@ export function ProjectModal({ project, onClose }: Props) {
     closeRef.current?.focus();
   }, []);
 
-  const hasMotion = project.media.kind === "video" || project.media.kind === "embed";
+  const mediaKind = project.media.kind;
+  const hasVideoOrEmbed = mediaKind === "video" || mediaKind === "embed";
+  const hasPdf = mediaKind === "pdf";
+  const hasPdfs = mediaKind === "pdfs";
+  const hasRichStage = hasVideoOrEmbed || hasPdf || hasPdfs;
+
   const showStills =
-    thumbSources.length > 1 || (hasMotion && project.gallery.length > 0);
+    thumbSources.length > 1 ||
+    (hasVideoOrEmbed && project.gallery.length > 0) ||
+    (hasPdf && project.gallery.length > 0) ||
+    (hasPdfs && project.gallery.length > 0);
+
+  const pdfSrc = mediaKind === "pdf" ? project.media.src : "";
 
   return (
     <div className="pf-modal-root" role="presentation">
@@ -91,34 +101,92 @@ export function ProjectModal({ project, onClose }: Props) {
             </p>
           ) : null}
 
-          {hasMotion ? (
-            <div className="pf-modal-stage">
-              {project.media.kind === "video" ? (
-                <video
-                  className="pf-video"
-                  src={project.media.src}
-                  poster={project.media.poster}
-                  controls
-                  playsInline
-                />
-              ) : (
-                <div className="pf-embed">
-                  <iframe
-                    title={`${project.title} video`}
-                    src={toEmbedSrc(project.media.src)}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
-                </div>
-              )}
+          {mediaKind === "pdf" ? (
+            <p className="pf-modal-live">
+              <a
+                className="pf-modal-cta"
+                href={pdfSrc}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open PDF in new tab
+                <span aria-hidden>↗</span>
+              </a>
+            </p>
+          ) : null}
+
+          {mediaKind === "pdfs" ? (
+            <div
+              className="pf-modal-live pf-modal-live--cluster"
+              role="group"
+              aria-label="Open PDFs in a new tab"
+            >
+              {project.media.files.map((file) => (
+                <a
+                  key={file.src}
+                  className="pf-modal-cta"
+                  href={file.src}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open {file.label}
+                  <span aria-hidden>↗</span>
+                </a>
+              ))}
             </div>
+          ) : null}
+
+          {hasRichStage ? (
+            mediaKind === "pdfs" ? (
+              <div className="pf-pdf-stack">
+                {project.media.files.map((file) => (
+                  <section key={file.src} className="pf-pdf-stack-block">
+                    <h3 className="pf-pdf-label">{file.label}</h3>
+                    <div className="pf-modal-stage">
+                      <iframe
+                        className="pf-pdf-frame pf-pdf-frame--stacked"
+                        title={`${project.title}: ${file.label}`}
+                        src={file.src}
+                      />
+                    </div>
+                  </section>
+                ))}
+              </div>
+            ) : (
+              <div className="pf-modal-stage">
+                {mediaKind === "video" ? (
+                  <video
+                    className="pf-video"
+                    src={project.media.src}
+                    poster={project.media.poster}
+                    controls
+                    playsInline
+                  />
+                ) : mediaKind === "embed" ? (
+                  <div className="pf-embed">
+                    <iframe
+                      title={`${project.title} video`}
+                      src={toEmbedSrc(project.media.src)}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
+                ) : mediaKind === "pdf" ? (
+                  <iframe
+                    className="pf-pdf-frame"
+                    title={`${project.title} (PDF)`}
+                    src={pdfSrc}
+                  />
+                ) : null}
+              </div>
+            )
           ) : (
             <div className="pf-modal-stage">
               <img src={activeImage} alt="" />
             </div>
           )}
 
-          {hasMotion && showStills ? (
+          {hasRichStage && showStills ? (
             <div
               className="pf-modal-stage"
               style={{ marginTop: "0.85rem", background: "#030303" }}

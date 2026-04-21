@@ -41,9 +41,9 @@ export default function App() {
         </div>
         <aside className="pf-hero-panel" aria-label="Highlights">
           <p>
-            <strong>Featured work:</strong> Webzine, postcards, hot sauce
-            packaging, and a Garber-inspired interactive clock—tap any tile to open
-            it larger (and use thumbnails when a project has more than one photo).
+            <strong>Featured work:</strong> Webzine through packaging, clock,
+            typefaces, port PDFs, a banana bread cookbook spread, and more—tap a
+            tile to open it; PDFs embed inline with links to open in a new tab.
           </p>
         </aside>
       </section>

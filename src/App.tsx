@@ -1,4 +1,4 @@
-import { useMemo, useState, type CSSProperties } from "react";
+import { useMemo, useState } from "react";
 import raw from "./data/portfolio.json";
 import { ProjectModal } from "./components/ProjectModal";
 import type { PortfolioData, Project } from "./types";
@@ -17,19 +17,12 @@ export default function App() {
   const { profile } = data;
 
   return (
-    <div
-      className="pf-app-bg"
-      style={
-        {
-          "--cherry-bg-url": `url(${publicUrl("/images/cherry-blossom-bg.png")})`,
-        } as CSSProperties
-      }
-    >
+    <div className="pf-app-bg">
       <div className="pf-page">
         <header className="pf-header">
           <a className="pf-mark" href="#about">
             {profile.name}
-            <span>.</span>
+            <span>✿</span>
           </a>
           <nav className="pf-nav" aria-label="Primary">
             <a href="#work">Work</a>

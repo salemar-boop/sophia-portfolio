@@ -3,22 +3,25 @@
   background-color: #fdf2f5;
   background-image:
     radial-gradient(ellipse 130% 85% at 50% -15%, rgba(255, 255, 255, 0.65), transparent 55%),
+    radial-gradient(circle at 18% 24%, rgba(224, 123, 129, 0.16) 0 14px, transparent 15px),
+    radial-gradient(circle at 82% 20%, rgba(224, 123, 129, 0.12) 0 12px, transparent 13px),
+    radial-gradient(circle at 74% 78%, rgba(199, 62, 69, 0.12) 0 15px, transparent 16px),
+    radial-gradient(circle at 24% 74%, rgba(224, 123, 129, 0.1) 0 11px, transparent 12px),
     linear-gradient(
       175deg,
       rgba(253, 242, 245, 0.78) 0%,
       rgba(255, 252, 253, 0.72) 45%,
       rgba(252, 232, 240, 0.85) 100%
-    ),
-    var(--cherry-bg-url, none);
-  background-size: auto, auto, cover;
-  background-position: 0 0, 0 0, center 22%;
+    );
+  background-size: auto, auto, auto, auto, auto, auto;
+  background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
   background-repeat: no-repeat;
-  background-attachment: scroll, scroll, fixed;
+  background-attachment: scroll;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .pf-app-bg {
-    background-attachment: scroll, scroll, scroll;
+    background-attachment: scroll;
   }
 }
 
@@ -83,12 +86,20 @@
 }
 
 .pf-nav a {
+  position: relative;
   font-size: 0.9rem;
   color: var(--text-muted);
   padding: 0.35rem 0.6rem;
   border-radius: 999px;
   border: 1px solid transparent;
   transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.25s ease;
+}
+
+.pf-nav a::before {
+  content: "✿";
+  font-size: 0.65rem;
+  color: var(--accent-soft);
+  margin-right: 0.35rem;
 }
 
 .pf-nav a:hover {
@@ -278,6 +289,13 @@
   transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
 }
 
+.pf-link-pill::before {
+  content: "✿";
+  color: var(--accent);
+  font-size: 0.72rem;
+  margin-right: 0.2rem;
+}
+
 .pf-link-pill:hover {
   border-color: var(--accent);
   box-shadow: 0 6px 24px rgba(158, 27, 33, 0.12);
@@ -453,6 +471,12 @@
   border: 1px solid rgba(255, 255, 255, 0.35);
   box-shadow: 0 4px 22px rgba(158, 27, 33, 0.28);
   transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.2s ease;
+}
+
+.pf-modal-cta::before {
+  content: "✿";
+  font-size: 0.72rem;
+  opacity: 0.95;
 }
 
 .pf-modal-cta:hover {

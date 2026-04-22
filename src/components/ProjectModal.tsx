@@ -72,9 +72,6 @@ export function ProjectModal({ project, onClose }: Props) {
       >
         <div className="pf-modal-header">
           <div>
-            <p className="pf-card-kicker" style={{ marginBottom: "0.25rem" }}>
-              Project
-            </p>
             <h2 id={titleId}>{project.title}</h2>
           </div>
           <button

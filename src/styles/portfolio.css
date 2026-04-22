@@ -1,3 +1,27 @@
+.pf-app-bg {
+  min-height: 100vh;
+  background-color: #fdf2f5;
+  background-image:
+    radial-gradient(ellipse 130% 85% at 50% -15%, rgba(255, 255, 255, 0.65), transparent 55%),
+    linear-gradient(
+      175deg,
+      rgba(253, 242, 245, 0.78) 0%,
+      rgba(255, 252, 253, 0.72) 45%,
+      rgba(252, 232, 240, 0.85) 100%
+    ),
+    var(--cherry-bg-url, none);
+  background-size: auto, auto, cover;
+  background-position: 0 0, 0 0, center 22%;
+  background-repeat: no-repeat;
+  background-attachment: scroll, scroll, fixed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-app-bg {
+    background-attachment: scroll, scroll, scroll;
+  }
+}
+
 .pf-page {
   max-width: 1120px;
   margin: 0 auto;
@@ -22,9 +46,14 @@
   margin: 0 -1.25rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  background: linear-gradient(180deg, rgba(5, 5, 5, 0.92), rgba(5, 5, 5, 0.65));
-  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(224, 123, 129, 0.2);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.82),
+    rgba(255, 250, 252, 0.55)
+  );
+  backdrop-filter: blur(16px) saturate(1.2);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset;
 }
 
 @media (min-width: 768px) {
@@ -63,9 +92,9 @@
 }
 
 .pf-nav a:hover {
-  color: var(--text);
-  border-color: rgba(232, 165, 152, 0.45);
-  box-shadow: 0 0 18px rgba(232, 165, 152, 0.18);
+  color: var(--accent);
+  border-color: rgba(224, 123, 129, 0.45);
+  box-shadow: 0 4px 20px rgba(158, 27, 33, 0.1);
 }
 
 .pf-hero {
@@ -86,8 +115,9 @@
   text-transform: uppercase;
   letter-spacing: 0.28em;
   font-size: 0.68rem;
-  color: var(--accent-soft);
+  color: var(--accent);
   margin: 0 0 0.75rem;
+  opacity: 0.85;
 }
 
 .pf-hero h1 {
@@ -100,7 +130,7 @@
 
 .pf-hero h1 em {
   font-style: italic;
-  color: var(--highlight);
+  color: var(--accent-soft);
 }
 
 .pf-lede {
@@ -114,9 +144,32 @@
   margin-top: 2rem;
   border-radius: var(--radius-lg);
   padding: 1.25rem 1.35rem;
-  background: linear-gradient(145deg, rgba(232, 165, 152, 0.14), rgba(18, 16, 16, 0.94));
-  border: 1px solid rgba(245, 196, 184, 0.2);
-  box-shadow: var(--shadow-soft), 0 0 48px rgba(232, 165, 152, 0.1);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.55),
+    rgba(255, 248, 250, 0.42)
+  );
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-soft), 0 0 0 1px rgba(255, 255, 255, 0.35) inset;
+  backdrop-filter: blur(14px) saturate(1.15);
+  animation: pf-panel-bloom 8s ease-in-out infinite alternate;
+}
+
+@keyframes pf-panel-bloom {
+  from {
+    box-shadow: var(--shadow-soft), 0 0 0 1px rgba(255, 255, 255, 0.35) inset;
+  }
+  to {
+    box-shadow:
+      0 24px 70px rgba(224, 123, 129, 0.12),
+      0 0 0 1px rgba(255, 255, 255, 0.45) inset;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-hero-panel {
+    animation: none;
+  }
 }
 
 @media (min-width: 768px) {
@@ -168,19 +221,24 @@
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: var(--bg-elevated);
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.38);
   text-align: left;
   padding: 0;
   cursor: pointer;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.25s ease;
+  transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.3s ease;
+  backdrop-filter: blur(10px) saturate(1.1);
+  box-shadow: 0 4px 24px rgba(158, 27, 33, 0.06);
 }
 
 .pf-card:hover,
 .pf-card:focus-visible {
-  transform: translateY(-4px);
-  border-color: rgba(232, 165, 152, 0.4);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5), 0 0 36px rgba(232, 165, 152, 0.22);
+  transform: translateY(-6px);
+  border-color: rgba(224, 123, 129, 0.55);
+  box-shadow:
+    0 22px 50px rgba(158, 27, 33, 0.12),
+    0 0 40px rgba(255, 255, 255, 0.5) inset,
+    0 0 28px rgba(224, 123, 129, 0.2);
   outline: none;
 }
 
@@ -196,25 +254,30 @@
   height: 100%;
   object-fit: cover;
   transform: scale(1.02);
-  transition: transform 0.6s ease, filter 0.4s ease;
-  filter: saturate(1.05) contrast(1.05);
+  transition: transform 0.7s ease, filter 0.45s ease;
+  filter: saturate(1.08) contrast(1.02) brightness(1.02);
 }
 
 .pf-card:hover .pf-card-media img,
 .pf-card:hover .pf-card-media video {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 .pf-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 20%, rgba(5, 5, 5, 0.85));
-  opacity: 0.85;
-  transition: opacity 0.35s ease;
+  background: linear-gradient(
+    180deg,
+    transparent 15%,
+    rgba(61, 44, 42, 0.55) 55%,
+    rgba(42, 28, 30, 0.82) 100%
+  );
+  opacity: 0.88;
+  transition: opacity 0.4s ease;
 }
 
 .pf-card:hover .pf-card-overlay {
-  opacity: 0.65;
+  opacity: 0.72;
 }
 
 .pf-card-body {
@@ -229,8 +292,14 @@
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent-soft);
+  color: var(--accent);
   margin: 0 0 0.35rem;
+  opacity: 0.9;
+}
+
+.pf-card .pf-card-body .pf-card-kicker {
+  color: rgba(255, 248, 250, 0.96);
+  opacity: 1;
 }
 
 .pf-card-title {
@@ -239,13 +308,23 @@
   margin: 0;
 }
 
+.pf-card .pf-card-body .pf-card-title {
+  color: #fffefb;
+  text-shadow: 0 1px 12px rgba(42, 28, 30, 0.35);
+}
+
 .pf-about {
   margin-top: 3.5rem;
   padding: 2rem 1.5rem;
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  background: linear-gradient(160deg, rgba(44, 27, 24, 0.45), rgba(10, 10, 10, 0.92));
-  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(
+    155deg,
+    rgba(255, 255, 255, 0.58),
+    rgba(255, 245, 248, 0.4)
+  );
+  box-shadow: var(--shadow-soft), 0 0 0 1px rgba(255, 255, 255, 0.4) inset;
+  backdrop-filter: blur(16px) saturate(1.1);
 }
 
 @media (min-width: 768px) {
@@ -282,22 +361,23 @@
   gap: 0.75rem;
   padding: 0.65rem 0.85rem;
   border-radius: 999px;
-  border: 1px solid rgba(232, 165, 152, 0.4);
+  border: 1px solid rgba(224, 123, 129, 0.45);
   color: var(--text);
   font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.45);
   transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
 }
 
 .pf-link-pill:hover {
-  border-color: var(--accent-soft);
-  box-shadow: 0 0 22px rgba(232, 165, 152, 0.22);
+  border-color: var(--accent);
+  box-shadow: 0 6px 24px rgba(158, 27, 33, 0.12);
   transform: translateY(-1px);
 }
 
 .pf-footer {
   margin-top: 3rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(224, 123, 129, 0.25);
   font-size: 0.85rem;
   color: var(--text-muted);
   display: flex;
@@ -325,9 +405,13 @@
 .pf-modal-backdrop {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 22% 0%, rgba(232, 165, 152, 0.2), transparent 42%),
-    rgba(6, 5, 5, 0.9);
-  backdrop-filter: blur(10px);
+  background: radial-gradient(
+      circle at 30% 10%,
+      rgba(255, 240, 243, 0.35),
+      transparent 45%
+    ),
+    rgba(42, 36, 38, 0.35);
+  backdrop-filter: blur(12px) saturate(1.1);
 }
 
 .pf-modal {
@@ -336,10 +420,15 @@
   max-height: min(94vh, 900px);
   overflow: auto;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
   border-bottom: none;
-  background: linear-gradient(180deg, #111, #070707);
-  box-shadow: var(--shadow-soft);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.94) 0%,
+    rgba(255, 248, 250, 0.9) 100%
+  );
+  box-shadow: var(--shadow-soft), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  backdrop-filter: blur(18px) saturate(1.05);
   animation: pf-rise 0.45s ease forwards;
 }
 
@@ -371,8 +460,13 @@
   position: sticky;
   top: 0;
   z-index: 2;
-  background: linear-gradient(180deg, rgba(8, 8, 8, 0.98), rgba(8, 8, 8, 0.65));
-  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 252, 253, 0.75)
+  );
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(224, 123, 129, 0.15);
 }
 
 @media (min-width: 768px) {
@@ -389,18 +483,20 @@
 
 .pf-modal-close {
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(158, 27, 33, 0.2);
   width: 2.25rem;
   height: 2.25rem;
   display: grid;
   place-items: center;
   flex-shrink: 0;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.6);
   transition: border-color 0.2s ease, box-shadow 0.25s ease, transform 0.15s ease;
 }
 
 .pf-modal-close:hover {
-  border-color: rgba(245, 196, 184, 0.5);
-  box-shadow: 0 0 18px rgba(232, 165, 152, 0.28);
+  border-color: var(--accent-soft);
+  box-shadow: 0 4px 18px rgba(224, 123, 129, 0.25);
 }
 
 .pf-modal-close:active {
@@ -441,18 +537,18 @@
   padding: 0.65rem 1.1rem;
   border-radius: 999px;
   font-size: 0.92rem;
-  font-weight: 500;
-  color: #1a0f0d;
-  background: linear-gradient(120deg, rgba(255, 212, 201, 0.98), rgba(232, 165, 152, 0.85));
-  border: 1px solid rgba(255, 248, 245, 0.55);
-  box-shadow: 0 0 24px rgba(232, 165, 152, 0.25);
+  font-weight: 600;
+  color: #fffefb;
+  background: linear-gradient(125deg, #b3242c, #9e1b21 45%, #c73e45);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 22px rgba(158, 27, 33, 0.28);
   transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.2s ease;
 }
 
 .pf-modal-cta:hover {
   transform: translateY(-1px);
-  border-color: var(--text);
-  box-shadow: 0 0 32px rgba(245, 196, 184, 0.4);
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 8px 32px rgba(158, 27, 33, 0.35);
 }
 
 .pf-modal-cta:focus-visible {
@@ -463,29 +559,30 @@
 .pf-modal-stage {
   border-radius: var(--radius-md);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(224, 123, 129, 0.25);
   margin-bottom: 1.25rem;
-  background: #000;
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4) inset;
 }
 
 .pf-modal-stage img {
   width: 100%;
   max-height: 52vh;
   object-fit: contain;
-  background: #020202;
+  background: rgba(253, 242, 245, 0.9);
 }
 
 .pf-video {
   width: 100%;
   max-height: min(60vh, 520px);
-  background: #000;
+  background: #2a2426;
 }
 
 .pf-pdf-frame {
   width: 100%;
   min-height: min(72vh, 760px);
   border: 0;
-  background: #111;
+  background: #fdf8f9;
 }
 
 @media (max-width: 767px) {
@@ -553,10 +650,10 @@
 .pf-thumb {
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(224, 123, 129, 0.3);
   cursor: zoom-in;
   padding: 0;
-  background: #050505;
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .pf-thumb img {

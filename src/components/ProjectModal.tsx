@@ -196,7 +196,10 @@ export function ProjectModal({ project, onClose }: Props) {
           {hasRichStage && showStills ? (
             <div
               className="pf-modal-stage"
-              style={{ marginTop: "0.85rem", background: "#030303" }}
+              style={{
+                marginTop: "0.85rem",
+                background: "rgba(253, 242, 245, 0.95)",
+              }}
             >
               <img
                 src={activeImageUrl}

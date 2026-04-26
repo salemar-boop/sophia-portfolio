@@ -1,15 +1,12 @@
 ﻿{
-    "profile":  {
-                    "name":  "Sophia Alemar",
-                    "title":  "Graphic designer Â· Maryland-born Â· 19",
-                    "bio":  "I\u0027ve always been interested in some sort of art, of course I didn\u0027t understand it much when I was a kid but I know that exploring and learning new ways to express myself was something I enjoyed a lot. I origonally apply to major in Graphic Design on a whim, but I found that it\u0027s something I\u0027ve learned to really enjoy now. I know it sounds cheesy, but it\u0027s the truth, and it\u0027s become a place where I can be both creative and professonal; including my hobbies without burning myself out.",
-                    "links":  [
-                                  {
-                                      "url":  "https://instagram.com/sophiaalemar",
-                                      "label":  "Instagram @sophiaalemar"
-                                  }
-                              ]
-                },
+  "profile": {
+    "name": "Sophia Alemar",
+    "title": "Graphic designer · Maryland-born · 19",
+    "bio": "I've always been interested in some sort of art, of course I didn't understand it much when I was a kid but I know that exploring and learning new ways to express myself was something I enjoyed a lot. I origonally apply to major in Graphic Design on a whim, but I found that it's something I've learned to really enjoy now. I know it sounds cheesy, but it's the truth, and it's become a place where I can be both creative and professonal; including my hobbies without burning myself out.",
+    "links": [
+      { "label": "Instagram @sophiaalemar", "url": "https://instagram.com/sophiaalemar" }
+    ]
+  },
     "projects":  [
                      {
                          "id":  "webzine-project-1",

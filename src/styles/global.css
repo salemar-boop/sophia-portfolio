@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   color-scheme: light;
   /* Cherry blossom palette */
   --bg-deep: #fdf2f5;
@@ -17,7 +17,7 @@
   --glass-border: rgba(255, 255, 255, 0.72);
   --glass-highlight: rgba(255, 255, 255, 0.95);
   --font-serif: "Playfair Display", "Times New Roman", serif;
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;`r`n  --font-display: "Otomanopee One", "Inter", system-ui, sans-serif;
   --radius-lg: 24px;
   --radius-md: 18px;
   --shadow-soft: 0 20px 60px rgba(158, 27, 33, 0.08), 0 8px 24px rgba(224, 123, 129, 0.1);
@@ -77,3 +77,4 @@ button {
   white-space: nowrap;
   border: 0;
 }
+

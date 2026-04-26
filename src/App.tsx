@@ -2,7 +2,6 @@ import { useMemo, useState } from "react";
 import raw from "./data/portfolio.json";
 import { ProjectModal } from "./components/ProjectModal";
 import type { PortfolioData, Project } from "./types";
-import { publicUrl } from "./utils/publicUrl";
 import "./styles/portfolio.css";
 
 const data = raw as PortfolioData;
@@ -79,8 +78,8 @@ export default function App() {
                 <div className="pf-card-media">
                   {project.coverVideo ? (
                     <video
-                      src={publicUrl(project.coverVideo)}
-                      poster={publicUrl(project.coverImage)}
+                      src={project.coverVideo}
+                      poster={project.coverImage}
                       muted
                       loop
                       autoPlay
@@ -89,11 +88,7 @@ export default function App() {
                       aria-hidden
                     />
                   ) : (
-                    <img
-                      src={publicUrl(project.coverImage)}
-                      alt=""
-                      loading="lazy"
-                    />
+                    <img src={project.coverImage} alt="" loading="lazy" />
                   )}
                   <div className="pf-card-overlay" aria-hidden />
                   <div className="pf-card-body">

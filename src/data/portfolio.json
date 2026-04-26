@@ -1,16 +1,19 @@
 ﻿{
-  "profile": {
-    "name": "Sophia Alemar",
-    "title": "Graphic designer · Maryland-born · 19",
-    "bio": "I've always been interested in some sort of art, of course I didn't understand it much when I was a kid but I know that exploring and learning new ways to express myself was something I enjoyed a lot. I origonally apply to major in Graphic Design on a whim, but I found that it's something I've learned to really enjoy now. I know it sounds cheesy, but it's the truth, and it's become a place where I can be both creative and professonal; including my hobbies without burning myself out.",
-    "links": [
-      { "label": "Instagram @sophiaalemar", "url": "https://instagram.com/sophiaalemar" }
-    ]
-  },
+    "profile":  {
+                    "name":  "Sophia Alemar",
+                    "title":  "Graphic designer · Maryland-born · 19",
+                    "bio":  "I\u0027ve always been interested in some sort of art, of course I didn\u0027t understand it much when I was a kid but I know that exploring and learning new ways to express myself was something I enjoyed a lot. I origonally apply to major in Graphic Design on a whim, but I found that it\u0027s something I\u0027ve learned to really enjoy now. I know it sounds cheesy, but it\u0027s the truth, and it\u0027s become a place where I can be both creative and professonal; including my hobbies without burning myself out.",
+                    "links":  [
+                                  {
+                                      "url":  "https://instagram.com/sophiaalemar",
+                                      "label":  "Instagram @sophiaalemar"
+                                  }
+                              ]
+                },
     "projects":  [
                      {
                          "id":  "webzine-project-1",
-                         "title":  "Webzine â€” Project 1",
+                        "title":  "Webzine — Project 1",
                          "tagline":  "Video preview on the grid; full interactive piece on GitHub Pages.",
                          "description":  "This is my webzine: an interactive editorial layout you can explore in the browser. The tile on my portfolio plays a short preview clip; open the modal to watch it larger with controls, or use the button below to jump straight into the full experience.",
                          "coverImage":  "/placeholders/blossom-1.svg",
@@ -27,7 +30,7 @@
                      },
                      {
                          "id":  "dsgn271-postcards",
-                         "title":  "Postcards â€” DSGN 271",
+                        "title":  "Postcards — DSGN 271",
                          "tagline":  "Print set + a short fish animation from the same project.",
                          "description":  "This project pairs a full postcard series with a small motion piece built from one of the illustrations. The grid tile loops the fish animation so you get a quick sense of the movement; open the project to watch it with sound and controls, then scroll to the flat view to see how the printed cards read together as a set.",
                          "coverImage":  "/images/dsgn271-postcards.png",
@@ -43,9 +46,9 @@
                      },
                      {
                          "id":  "hot-sauce-labels",
-                         "title":  "Hot sauce labels â€” Whimpy\u0027s \u0026 Velvet",
+                        "title":  "Hot sauce labels — Whimpy\u0027s \u0026 Velvet",
                          "tagline":  "Two bottle concepts: playful patterning and a moody, editorial treatment.",
-                         "description":  "I designed the labels for both of these bottles. Whimpy\u0027s leans into a soft, handcrafted feelâ€”creamy yellow grounds, lavender type, and a scattered pattern of tiny peppers and bottles. Velvet goes the opposite direction: a dark matte label, tall condensed lettering, and photography with wax, candles, and deep burgundy tones so the pack reads more like a small-batch ritual than a grocery shelf staple.",
+                        "description":  "I designed the labels for both of these bottles. Whimpy\u0027s leans into a soft, handcrafted feel—creamy yellow grounds, lavender type, and a scattered pattern of tiny peppers and bottles. Velvet goes the opposite direction: a dark matte label, tall condensed lettering, and photography with wax, candles, and deep burgundy tones so the pack reads more like a small-batch ritual than a grocery shelf staple.",
                          "coverImage":  "/images/hotsauce-whimpy.png",
                          "gallery":  [
                                          "/images/hotsauce-velvet.png"
@@ -57,8 +60,8 @@
                      {
                          "id":  "ouabh-interactive-clock",
                          "title":  "You have to unlock your potential yourself.",
-                         "tagline":  "Mixed-media clock inspired by Stephanie Garber â€” Once Upon a Broken Heart.",
-                         "description":  "This piece is a hand-painted, interactive clock built around a hinged door: you open it to reveal a small painted sceneâ€”an apple, a reaching hand, floating papers, and branches against a blue-and-white voidâ€”with peach numbers and tiny white sparkles on a matte black face. It is inspired by Stephanie Garber and her path through more than two hundred rejections before the books she wanted to write found their audience. The idea is that progress stays interactive: you keep opening the next door yourself, on your own timeline, for the life you want to build.",
+                        "tagline":  "Mixed-media clock inspired by Stephanie Garber — Once Upon a Broken Heart.",
+                        "description":  "This piece is a hand-painted, interactive clock built around a hinged door: you open it to reveal a small painted scene—an apple, a reaching hand, floating papers, and branches against a blue-and-white void—with peach numbers and tiny white sparkles on a matte black face. It is inspired by Stephanie Garber and her path through more than two hundred rejections before the books she wanted to write found their audience. The idea is that progress stays interactive: you keep opening the next door yourself, on your own timeline, for the life you want to build.",
                          "coverImage":  "/images/ouabh-interactive-clock.png",
                          "gallery":  [
 
@@ -69,7 +72,7 @@
                      },
                      {
                          "id":  "custom-typeface-word",
-                         "title":  "Custom typefaces â€” Word",
+                        "title":  "Custom typefaces — Word",
                          "tagline":  "Original letterforms and specimen document (PDF).",
                          "description":  "For this assignment I developed my own typefaces and documented the process in a print-ready layout: early sketches, full character sets, and samples in headlines and body copy so the personality of each face reads clearly. The PDF is the final deliverable from class.",
                          "coverImage":  "/placeholders/typeface-specimen.svg",
@@ -83,9 +86,9 @@
                      },
                      {
                          "id":  "port-final-1",
-                         "title":  "Hollywood Ã— games â€” digital collage",
+                        "title":  "Hollywood × games — digital collage",
                          "tagline":  "Port folder deliverable (PDF).",
-                         "description":  "A digital collage that mixes a black-and-white Hollywood hillside with oversized Zelda propsâ€”the Hylian shield and sheathed Master Swordâ€”over a lime field with a light grid, plus a tiny 8-bit Mario perched on the sign. The PDF collects the full class write-up and layout for this piece from my port folder.",
+                        "description":  "A digital collage that mixes a black-and-white Hollywood hillside with oversized Zelda props—the Hylian shield and sheathed Master Sword—over a lime field with a light grid, plus a tiny 8-bit Mario perched on the sign. The PDF collects the full class write-up and layout for this piece from my port folder.",
                          "coverImage":  "/images/hollywood-games-collage.png",
                          "gallery":  [
 
@@ -97,9 +100,9 @@
                      },
                      {
                          "id":  "port-final-1-1",
-                         "title":  "Port project â€” Final (alternate PDF)",
+                        "title":  "Port project — Final (alternate PDF)",
                          "tagline":  "Second finalized export from the same brief.",
-                         "description":  "This is the companion PDF from the same port assignment (final 1-1). Open it to compare pagination, copy, or layout against the shorter final-1 exportâ€”whichever file matches what your instructor asked for is the one to lead with.",
+                        "description":  "This is the companion PDF from the same port assignment (final 1-1). Open it to compare pagination, copy, or layout against the shorter final-1 export—whichever file matches what your instructor asked for is the one to lead with.",
                          "coverImage":  "/images/hollywood-games-collage.png",
                          "gallery":  [
 
@@ -134,9 +137,9 @@
                      },
                      {
                          "id":  "cookbook-banana-bread",
-                         "title":  "Banana bread â€” family cookbook spread",
-                         "tagline":  "Recipe layout celebrating my momâ€™s banana bread (PDF).",
-                         "description":  "I designed this cookbook-style spread around my motherâ€™s banana bread: type, hierarchy, and pacing built for someone actually cooking at homeâ€”not a generic template. The PDF is what I turned in for class.",
+                        "title":  "Banana bread — family cookbook spread",
+                        "tagline":  "Recipe layout celebrating my mom's banana bread (PDF).",
+                        "description":  "I designed this cookbook-style spread around my mother's banana bread: type, hierarchy, and pacing built for someone actually cooking at home—not a generic template. The PDF is what I turned in for class.",
                          "coverImage":  "/placeholders/cookbook-banana-bread.svg",
                          "gallery":  [
 
@@ -148,8 +151,8 @@
                      },
                      {
                          "id":  "dsgn255-magazine-10-items",
-                         "title":  "Magazine spread â€” 10 items I would use",
-                         "tagline":  "DSGN 255, Project 2 â€” editorial layout (PDF).",
+                        "title":  "Magazine spread — 10 items I would use",
+                        "tagline":  "DSGN 255, Project 2 — editorial layout (PDF).",
                          "description":  "For this assignment I designed a magazine-style spread around ten objects I would actually use: pacing, hierarchy, and image treatment so it reads like a real editorial feature rather than a flat list. The PDF is the final magazine file from class.",
                          "coverImage":  "/placeholders/dsgn255-magazine-spread.svg",
                          "gallery":  [
@@ -176,9 +179,9 @@
                      },
                      {
                          "id":  "fenty-lip-gloss-poster",
-                         "title":  "Fenty Beauty â€” lip gloss poster",
+                        "title":  "Fenty Beauty — lip gloss poster",
                          "tagline":  "Animated-style poster built around Gloss Bomb energy.",
-                         "description":  "A fan poster for Fenty Beauty lip gloss: diagonal â€œMADE BY RIHANNAâ€ lettering with a deep green drop shadow, a dashed white frame, plum and pink fields, mint scribbles, glossy lip prints, and the tube and wand framed so the whole piece reads bold and campaign-ready.",
+                        "description":  "A fan poster for Fenty Beauty lip gloss: diagonal \"MADE BY RIHANNA\" lettering with a deep green drop shadow, a dashed white frame, plum and pink fields, mint scribbles, glossy lip prints, and the tube and wand framed so the whole piece reads bold and campaign-ready.",
                          "coverImage":  "/images/fenty-lip-poster.png",
                          "gallery":  [
 

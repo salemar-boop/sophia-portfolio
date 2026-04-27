@@ -33,6 +33,30 @@
         "src": "/videos/project-preview.mp4",
         "poster": "/images/ouabh-clock.png"
       }
+    },
+    {
+      "id": "album-cover",
+      "title": "Album cover",
+      "tagline": "Album design project (PDF).",
+      "description": "Final album cover project exported as a PDF.",
+      "coverImage": "/placeholders/album-cover.svg",
+      "gallery": [],
+      "media": {
+        "kind": "pdf",
+        "src": "/documents/album-cover.pdf"
+      }
+    },
+    {
+      "id": "object-study-poster",
+      "title": "Object study poster",
+      "tagline": "Three-poster series shown as images.",
+      "description": "Object study poster set. This project is displayed as image previews so each composition can be viewed directly in the portfolio modal.",
+      "coverImage": "/images/object-study-poster-1.png",
+      "gallery": [
+        "/images/object-study-poster-2.png",
+        "/images/object-study-poster-3.png"
+      ],
+      "media": { "kind": "none" }
     }
   ]
 }

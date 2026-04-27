@@ -69,6 +69,15 @@
         "kind": "pdf",
         "src": "/documents/type-poster.pdf"
       }
+    },
+    {
+      "id": "hot-sauce-project",
+      "title": "Hot Sauce Project",
+      "tagline": "Two label directions shown as a gallery.",
+      "description": "Hot sauce label study featuring the Whimpy and Velvet bottle concepts.",
+      "coverImage": "/images/hot-sauce-whimpy.png",
+      "gallery": ["/images/hot-sauce-velvet.png"],
+      "media": { "kind": "none" }
     }
   ]
 }

@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import raw from "./data/portfolio.json";
 import { ProjectModal } from "./components/ProjectModal";
 import type { PortfolioData, Project } from "./types";
+import { publicUrl } from "./utils/publicUrl";
 import "./styles/portfolio.css";
 
 const data = raw as PortfolioData;
@@ -66,8 +67,9 @@ export default function App() {
           <h2 className="pf-section-title" id="work-heading">
             <span>Work</span>
           </h2>
-          <div className="pf-grid">
-            {projects.map((project) => (
+          {projects.length > 0 ? (
+            <div className="pf-grid">
+              {projects.map((project) => (
               <button
                 key={project.id}
                 type="button"
@@ -78,8 +80,8 @@ export default function App() {
                 <div className="pf-card-media">
                   {project.coverVideo ? (
                     <video
-                      src={project.coverVideo}
-                      poster={project.coverImage}
+                      src={publicUrl(project.coverVideo)}
+                      poster={publicUrl(project.coverImage)}
                       muted
                       loop
                       autoPlay
@@ -88,7 +90,7 @@ export default function App() {
                       aria-hidden
                     />
                   ) : (
-                    <img src={project.coverImage} alt="" loading="lazy" />
+                    <img src={publicUrl(project.coverImage)} alt="" loading="lazy" />
                   )}
                   <div className="pf-card-overlay" aria-hidden />
                   <div className="pf-card-body">
@@ -96,8 +98,31 @@ export default function App() {
                   </div>
                 </div>
               </button>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="pf-empty">
+              <h3>No projects yet</h3>
+              <p>
+                Add files to <code>public/images</code>, <code>public/videos</code>, or{" "}
+                <code>public/documents</code>, then paste a project object into{" "}
+                <code>src/data/portfolio.json</code>.
+              </p>
+              <p>
+                GIFs work directly when used as <code>coverImage</code> (example:{" "}
+                <code>/images/my-loop.gif</code>).
+              </p>
+              <a
+                className="pf-link-pill"
+                href={publicUrl("/project-template.json")}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open project template
+                <span aria-hidden>↗</span>
+              </a>
+            </div>
+          )}
         </section>
 
         <footer className="pf-footer">

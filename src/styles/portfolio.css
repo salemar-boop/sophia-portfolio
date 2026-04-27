@@ -150,6 +150,33 @@
   gap: 1.25rem;
 }
 
+.pf-empty {
+  border: 1px dashed rgba(224, 123, 129, 0.5);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.2rem;
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 2px 20px rgba(158, 27, 33, 0.06);
+}
+
+.pf-empty h3 {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+}
+
+.pf-empty p {
+  margin: 0 0 0.6rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.pf-empty code {
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.08rem 0.32rem;
+  border-radius: 6px;
+}
+
 @media (min-width: 640px) {
   .pf-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

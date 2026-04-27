@@ -1,0 +1,14 @@
+﻿{
+  "id": "replace-this-id",
+  "title": "Project title",
+  "tagline": "Short one-line context",
+  "description": "What this project is and why you made it.",
+  "coverImage": "/images/your-cover.gif",
+  "gallery": [
+    "/images/extra-1.jpg",
+    "/images/extra-2.png"
+  ],
+  "media": {
+    "kind": "none"
+  }
+}

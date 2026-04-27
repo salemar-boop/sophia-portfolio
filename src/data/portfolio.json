@@ -57,6 +57,18 @@
         "/images/object-study-poster-3.png"
       ],
       "media": { "kind": "none" }
+    },
+    {
+      "id": "type-poster",
+      "title": "Type Poster",
+      "tagline": "Typography project (PDF with image preview).",
+      "description": "Type poster project shown with an image-style preview card, with the full PDF available in the modal.",
+      "coverImage": "/images/type-poster-cover.png",
+      "gallery": [],
+      "media": {
+        "kind": "pdf",
+        "src": "/documents/type-poster.pdf"
+      }
     }
   ]
 }

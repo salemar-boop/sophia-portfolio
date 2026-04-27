@@ -1,0 +1,10 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#fdf2f5"/>
+  <rect x="260" y="90" width="680" height="620" rx="24" fill="#ffffff" stroke="#e07b81" stroke-width="3"/>
+  <line x1="320" y1="230" x2="880" y2="230" stroke="#f1c7cc" stroke-width="2"/>
+  <line x1="320" y1="300" x2="880" y2="300" stroke="#f1c7cc" stroke-width="2"/>
+  <line x1="320" y1="370" x2="880" y2="370" stroke="#f1c7cc" stroke-width="2"/>
+  <text x="600" y="210" text-anchor="middle" font-family="Otomanopee One, Inter, sans-serif" font-size="72" fill="#9e1b21">Aa</text>
+  <text x="600" y="505" text-anchor="middle" font-family="Inter, sans-serif" font-size="34" fill="#6b5e62" letter-spacing="0.08em">TYPE POSTER</text>
+  <text x="600" y="560" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" fill="#9e1b21">PDF PREVIEW</text>
+</svg>

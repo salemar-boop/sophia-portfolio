@@ -1,26 +1,27 @@
 ﻿:root {
   color-scheme: light;
-  /* Cherry blossom palette */
-  --bg-deep: #fdf2f5;
-  --bg: #fff8fa;
-  --bg-elevated: rgba(255, 255, 255, 0.52);
-  --text: #2a2426;
-  --text-muted: #6b5e62;
-  --accent: #9e1b21;
-  --accent-soft: #e07b81;
-  --accent-deep: #6d1419;
-  --branch: #3d2c2a;
-  --glow: rgba(224, 123, 129, 0.45);
-  --ring: rgba(158, 27, 33, 0.35);
-  --highlight: #c73e45;
-  --bloom: rgba(255, 255, 255, 0.75);
-  --glass-border: rgba(255, 255, 255, 0.72);
-  --glass-highlight: rgba(255, 255, 255, 0.95);
-  --font-serif: "Playfair Display", "Times New Roman", serif;
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;`r`n  --font-display: "Otomanopee One", "Inter", system-ui, sans-serif;
+  /* Pastel notebook palette */
+  --bg-deep: #f8fbff;
+  --bg: #ffffff;
+  --bg-elevated: rgba(255, 255, 255, 0.8);
+  --text: #2f3f52;
+  --text-muted: #62809d;
+  --accent: #5b86b4;
+  --accent-soft: #f7ce6c;
+  --accent-deep: #4a6f96;
+  --branch: #7ba0c6;
+  --glow: rgba(91, 134, 180, 0.28);
+  --ring: rgba(247, 206, 108, 0.5);
+  --highlight: #5f82ab;
+  --bloom: rgba(255, 255, 255, 0.92);
+  --glass-border: rgba(154, 191, 229, 0.6);
+  --glass-highlight: rgba(255, 255, 255, 0.96);
+  --font-serif: "Baloo 2", "Nunito", system-ui, sans-serif;
+  --font-sans: "Nunito", system-ui, -apple-system, sans-serif;
+  --font-display: "Baloo 2", "Nunito", system-ui, sans-serif;
   --radius-lg: 24px;
-  --radius-md: 18px;
-  --shadow-soft: 0 20px 60px rgba(158, 27, 33, 0.08), 0 8px 24px rgba(224, 123, 129, 0.1);
+  --radius-md: 16px;
+  --shadow-soft: 0 16px 36px rgba(79, 117, 156, 0.12), 0 4px 16px rgba(96, 148, 198, 0.1);
 }
 
 *,

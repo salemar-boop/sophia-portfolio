@@ -1,19 +1,19 @@
 ﻿.pf-app-bg {
   min-height: 100vh;
-  background-color: #fdf2f5;
+  background-color: #f8fbff;
   background-image:
-    radial-gradient(ellipse 130% 85% at 50% -15%, rgba(255, 255, 255, 0.65), transparent 55%),
-    radial-gradient(circle at 18% 24%, rgba(224, 123, 129, 0.16) 0 14px, transparent 15px),
-    radial-gradient(circle at 82% 20%, rgba(224, 123, 129, 0.12) 0 12px, transparent 13px),
-    radial-gradient(circle at 74% 78%, rgba(199, 62, 69, 0.12) 0 15px, transparent 16px),
-    radial-gradient(circle at 24% 74%, rgba(224, 123, 129, 0.1) 0 11px, transparent 12px),
+    linear-gradient(to bottom, rgba(144, 186, 226, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247, 206, 108, 0.12) 1px, transparent 1px),
+    radial-gradient(circle at 8% 20%, rgba(247, 206, 108, 0.18) 0 12px, transparent 13px),
+    radial-gradient(circle at 90% 18%, rgba(170, 210, 245, 0.26) 0 14px, transparent 15px),
+    radial-gradient(circle at 86% 80%, rgba(247, 206, 108, 0.15) 0 10px, transparent 11px),
     linear-gradient(
-      175deg,
-      rgba(253, 242, 245, 0.78) 0%,
-      rgba(255, 252, 253, 0.72) 45%,
-      rgba(252, 232, 240, 0.85) 100%
+      180deg,
+      rgba(248, 251, 255, 0.95) 0%,
+      rgba(238, 247, 255, 0.9) 55%,
+      rgba(255, 251, 235, 0.85) 100%
     );
-  background-size: auto, auto, auto, auto, auto, auto;
+  background-size: 100% 42px, 42px 100%, auto, auto, auto, auto;
   background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -49,14 +49,14 @@
   margin: 0 -1.25rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  border-bottom: 1px solid rgba(224, 123, 129, 0.2);
+  border-bottom: 1px solid rgba(116, 163, 206, 0.35);
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.82),
-    rgba(255, 250, 252, 0.55)
+    rgba(255, 255, 255, 0.92),
+    rgba(246, 251, 255, 0.72)
   );
-  backdrop-filter: blur(16px) saturate(1.2);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  backdrop-filter: blur(12px) saturate(1.1);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.82) inset;
 }
 
 @media (min-width: 768px) {
@@ -98,14 +98,14 @@
 .pf-nav a::before {
   content: "✿";
   font-size: 0.65rem;
-  color: var(--accent-soft);
+  color: #f4bf45;
   margin-right: 0.35rem;
 }
 
 .pf-nav a:hover {
   color: var(--accent);
-  border-color: rgba(224, 123, 129, 0.45);
-  box-shadow: 0 4px 20px rgba(158, 27, 33, 0.1);
+  border-color: rgba(91, 134, 180, 0.45);
+  box-shadow: 0 6px 18px rgba(91, 134, 180, 0.2);
 }
 
 .pf-about.pf-intro {
@@ -147,7 +147,8 @@
 
 .pf-grid {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.4rem;
+  align-items: start;
 }
 
 .pf-empty {
@@ -179,14 +180,14 @@
 
 @media (min-width: 640px) {
   .pf-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
   }
 }
 
 @media (min-width: 1024px) {
   .pf-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, minmax(230px, 1fr));
+    gap: 1.6rem;
   }
 }
 
@@ -194,24 +195,30 @@
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
-  border: 1px solid var(--glass-border);
-  background: rgba(255, 255, 255, 0.38);
+  border: 2px solid rgba(153, 196, 236, 0.55);
+  background: #fffef8;
   text-align: left;
   padding: 0;
   cursor: pointer;
-  transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.3s ease;
-  backdrop-filter: blur(10px) saturate(1.1);
-  box-shadow: 0 4px 24px rgba(158, 27, 33, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.3s ease;
+  box-shadow: 0 10px 20px rgba(102, 149, 191, 0.2);
+}
+
+.pf-card:nth-child(odd) {
+  transform: rotate(-1.1deg);
+}
+
+.pf-card:nth-child(even) {
+  transform: rotate(0.9deg);
 }
 
 .pf-card:hover,
 .pf-card:focus-visible {
-  transform: translateY(-6px);
-  border-color: rgba(224, 123, 129, 0.55);
+  transform: translateY(-6px) rotate(0deg);
+  border-color: rgba(247, 206, 108, 0.8);
   box-shadow:
-    0 22px 50px rgba(158, 27, 33, 0.12),
-    0 0 40px rgba(255, 255, 255, 0.5) inset,
-    0 0 28px rgba(224, 123, 129, 0.2);
+    0 18px 35px rgba(84, 122, 162, 0.2),
+    0 0 0 4px rgba(255, 246, 202, 0.65) inset;
   outline: none;
 }
 
@@ -242,8 +249,8 @@
   background: linear-gradient(
     180deg,
     transparent 15%,
-    rgba(61, 44, 42, 0.55) 55%,
-    rgba(42, 28, 30, 0.82) 100%
+    rgba(63, 95, 126, 0.46) 55%,
+    rgba(45, 66, 89, 0.72) 100%
   );
   opacity: 0.88;
   transition: opacity 0.4s ease;
@@ -269,21 +276,21 @@
 
 .pf-card .pf-card-body .pf-card-title {
   color: #fffefb;
-  text-shadow: 0 1px 12px rgba(42, 28, 30, 0.35);
+  text-shadow: 0 1px 10px rgba(30, 48, 69, 0.45);
 }
 
 .pf-about {
   margin-top: 2.25rem;
   padding: 2rem 1.5rem;
   border-radius: var(--radius-lg);
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(144, 186, 226, 0.5);
   background: linear-gradient(
     155deg,
-    rgba(255, 255, 255, 0.58),
-    rgba(255, 245, 248, 0.4)
+    rgba(255, 255, 255, 0.8),
+    rgba(244, 250, 255, 0.72)
   );
-  box-shadow: var(--shadow-soft), 0 0 0 1px rgba(255, 255, 255, 0.4) inset;
-  backdrop-filter: blur(16px) saturate(1.1);
+  box-shadow: var(--shadow-soft), 0 0 0 1px rgba(255, 255, 255, 0.65) inset;
+  backdrop-filter: blur(10px) saturate(1.03);
 }
 
 @media (min-width: 768px) {
@@ -309,30 +316,30 @@
   gap: 0.75rem;
   padding: 0.65rem 0.85rem;
   border-radius: 999px;
-  border: 1px solid rgba(224, 123, 129, 0.45);
+  border: 1px solid rgba(116, 163, 206, 0.5);
   color: var(--text);
   font-size: 0.9rem;
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.85);
   transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
 }
 
 .pf-link-pill::before {
   content: "✿";
-  color: var(--accent);
+  color: #f0b93a;
   font-size: 0.72rem;
   margin-right: 0.2rem;
 }
 
 .pf-link-pill:hover {
-  border-color: var(--accent);
-  box-shadow: 0 6px 24px rgba(158, 27, 33, 0.12);
+  border-color: #7fb0df;
+  box-shadow: 0 8px 20px rgba(108, 152, 196, 0.2);
   transform: translateY(-1px);
 }
 
 .pf-footer {
   margin-top: 3rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(224, 123, 129, 0.25);
+  border-top: 1px solid rgba(137, 177, 214, 0.4);
   font-size: 0.85rem;
   color: var(--text-muted);
   display: flex;
@@ -494,9 +501,9 @@
   font-size: 0.92rem;
   font-weight: 600;
   color: #fffefb;
-  background: linear-gradient(125deg, #b3242c, #9e1b21 45%, #c73e45);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 4px 22px rgba(158, 27, 33, 0.28);
+  background: linear-gradient(125deg, #76a6d7, #5b86b4 45%, #8eb9e1);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 20px rgba(91, 134, 180, 0.28);
   transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.2s ease;
 }
 
@@ -509,7 +516,7 @@
 .pf-modal-cta:hover {
   transform: translateY(-1px);
   border-color: rgba(255, 255, 255, 0.55);
-  box-shadow: 0 8px 32px rgba(158, 27, 33, 0.35);
+  box-shadow: 0 8px 28px rgba(91, 134, 180, 0.35);
 }
 
 .pf-modal-cta:focus-visible {

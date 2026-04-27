@@ -78,6 +78,20 @@
       "coverImage": "/images/hot-sauce-whimpy.png",
       "gallery": ["/images/hot-sauce-velvet.png"],
       "media": { "kind": "none" }
+    },
+    {
+      "id": "postcards",
+      "title": "Postcards",
+      "tagline": "Postcard visuals with fish animation preview.",
+      "description": "Postcards project shown as a still image set with a fish video preview.",
+      "coverImage": "/images/postcards-cover.png",
+      "coverVideo": "/videos/postcards-fish.mp4",
+      "gallery": ["/images/postcards-cover.png"],
+      "media": {
+        "kind": "video",
+        "src": "/videos/postcards-fish.mp4",
+        "poster": "/images/postcards-cover.png"
+      }
     }
   ]
 }

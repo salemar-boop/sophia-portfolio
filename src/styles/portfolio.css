@@ -78,6 +78,7 @@
   display: grid;
   gap: 0.8rem;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-auto-flow: dense;
 }
 
 .pf-card {
@@ -104,6 +105,24 @@
   overflow: hidden;
   border-radius: 0;
   background: #fff;
+}
+
+@media (min-width: 900px) {
+  .pf-card--wide {
+    grid-column: span 2;
+  }
+
+  .pf-card--tall .pf-card-media {
+    aspect-ratio: 4 / 5;
+  }
+
+  .pf-card--feature {
+    grid-column: span 2;
+  }
+
+  .pf-card--feature .pf-card-media {
+    aspect-ratio: 16 / 10;
+  }
 }
 
 .pf-card-media img,

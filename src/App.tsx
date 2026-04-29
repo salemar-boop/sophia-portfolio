@@ -30,48 +30,59 @@ export default function App() {
           <div className="pf-work-shell">
             {projects.length > 0 ? (
               <div className="pf-grid">
-                {projects.map((project) => (
-                  <button
-                    key={project.id}
-                    type="button"
-                    className="pf-card pf-ripple"
-                    aria-label={`View ${project.title}`}
-                    onClick={() => setOpen(project)}
-                  >
-                    <div className="pf-card-media">
-                      {project.coverVideo ? (
-                        <video
-                          src={publicUrl(project.coverVideo)}
-                          poster={publicUrl(project.coverImage)}
-                          muted
-                          loop
-                          autoPlay
-                          playsInline
-                          preload="metadata"
-                          aria-hidden
-                        />
-                  ) : project.media.kind === "pdf" ? (
-                    <iframe
-                      className="pf-card-pdf"
-                      src={`${publicUrl(project.media.src)}#page=1&view=FitH`}
-                      title={`${project.title} preview`}
-                      aria-hidden
-                    />
-                  ) : project.media.kind === "pdfs" &&
-                    project.media.files.length > 0 ? (
-                    <iframe
-                      className="pf-card-pdf"
-                      src={`${publicUrl(project.media.files[0].src)}#page=1&view=FitH`}
-                      title={`${project.title} preview`}
-                      aria-hidden
-                    />
-                      ) : (
-                        <img src={publicUrl(project.coverImage)} alt="" loading="lazy" />
-                      )}
-                    </div>
-                    <h3 className="pf-card-title">{project.title}</h3>
-                  </button>
-                ))}
+                {projects.map((project, index) => {
+                  const sizeClass =
+                    index % 7 === 0
+                      ? "pf-card--feature"
+                      : index % 5 === 0
+                        ? "pf-card--wide"
+                        : index % 4 === 0
+                          ? "pf-card--tall"
+                          : "";
+
+                  return (
+                    <button
+                      key={project.id}
+                      type="button"
+                      className={`pf-card pf-ripple ${sizeClass}`.trim()}
+                      aria-label={`View ${project.title}`}
+                      onClick={() => setOpen(project)}
+                    >
+                      <div className="pf-card-media">
+                        {project.coverVideo ? (
+                          <video
+                            src={publicUrl(project.coverVideo)}
+                            poster={publicUrl(project.coverImage)}
+                            muted
+                            loop
+                            autoPlay
+                            playsInline
+                            preload="metadata"
+                            aria-hidden
+                          />
+                        ) : project.media.kind === "pdf" ? (
+                          <iframe
+                            className="pf-card-pdf"
+                            src={`${publicUrl(project.media.src)}#page=1&view=FitH`}
+                            title={`${project.title} preview`}
+                            aria-hidden
+                          />
+                        ) : project.media.kind === "pdfs" &&
+                          project.media.files.length > 0 ? (
+                          <iframe
+                            className="pf-card-pdf"
+                            src={`${publicUrl(project.media.files[0].src)}#page=1&view=FitH`}
+                            title={`${project.title} preview`}
+                            aria-hidden
+                          />
+                        ) : (
+                          <img src={publicUrl(project.coverImage)} alt="" loading="lazy" />
+                        )}
+                      </div>
+                      <h3 className="pf-card-title">{project.title}</h3>
+                    </button>
+                  );
+                })}
               </div>
             ) : (
               <div className="pf-empty">

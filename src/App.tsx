@@ -107,34 +107,35 @@ export default function App() {
               </div>
             )}
 
-            <aside
-              className="pf-about pf-intro pf-side-bio"
-              id="about"
-              aria-labelledby="about-heading"
-            >
-              <div>
-                <h1 className="pf-intro-name" id="about-heading">
-                  {profile.name}
-                </h1>
-                <p className="pf-intro-title">{profile.title}</p>
-                <p className="pf-intro-bio">{profile.bio}</p>
-              </div>
-              <div className="pf-links">
-                {profile.links.map((link) => (
-                  <a
-                    key={link.url}
-                    className="pf-link-pill"
-                    href={link.url}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {link.label}
-                    <span aria-hidden>↗</span>
-                  </a>
-                ))}
-              </div>
-            </aside>
           </div>
+
+          <aside
+            className="pf-about pf-intro pf-side-bio"
+            id="about"
+            aria-labelledby="about-heading"
+          >
+            <div>
+              <h1 className="pf-intro-name" id="about-heading">
+                {profile.name}
+              </h1>
+              <p className="pf-intro-title">{profile.title}</p>
+              <p className="pf-intro-bio">{profile.bio}</p>
+            </div>
+            <div className="pf-links">
+              {profile.links.map((link) => (
+                <a
+                  key={link.url}
+                  className="pf-link-pill"
+                  href={link.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {link.label}
+                  <span aria-hidden>↗</span>
+                </a>
+              ))}
+            </div>
+          </aside>
         </section>
 
         <footer className="pf-footer">

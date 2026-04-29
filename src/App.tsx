@@ -33,96 +33,93 @@ export default function App() {
           </nav>
         </header>
 
-        <section
-          className="pf-about pf-intro"
-          id="about"
-          aria-labelledby="about-heading"
-        >
-          <div>
-            <h1 className="pf-intro-name" id="about-heading">
-              {profile.name}
-            </h1>
-            <p className="pf-intro-title">{profile.title}</p>
-            <p className="pf-intro-bio">{profile.bio}</p>
-          </div>
-          <div>
-            <div className="pf-links">
-              {profile.links.map((link) => (
+        <section id="work" aria-labelledby="work-heading">
+          <h2 className="pf-section-title" id="work-heading">
+            <span>Projects</span>
+          </h2>
+          <div className="pf-work-shell">
+            {projects.length > 0 ? (
+              <div className="pf-grid">
+                {projects.map((project) => (
+                  <button
+                    key={project.id}
+                    type="button"
+                    className="pf-card pf-ripple"
+                    aria-label={`View ${project.title}`}
+                    onClick={() => setOpen(project)}
+                  >
+                    <div className="pf-card-media">
+                      {project.coverVideo ? (
+                        <video
+                          src={publicUrl(project.coverVideo)}
+                          poster={publicUrl(project.coverImage)}
+                          muted
+                          loop
+                          autoPlay
+                          playsInline
+                          preload="metadata"
+                          aria-hidden
+                        />
+                      ) : (
+                        <img src={publicUrl(project.coverImage)} alt="" loading="lazy" />
+                      )}
+                    </div>
+                    <h3 className="pf-card-title">{project.title}</h3>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <div className="pf-empty">
+                <h3>No projects yet</h3>
+                <p>
+                  Add files to <code>public/images</code>, <code>public/videos</code>, or{" "}
+                  <code>public/documents</code>, then paste a project object into{" "}
+                  <code>src/data/portfolio.json</code>.
+                </p>
+                <p>
+                  GIFs work directly when used as <code>coverImage</code> (example:{" "}
+                  <code>/images/my-loop.gif</code>).
+                </p>
                 <a
-                  key={link.url}
                   className="pf-link-pill"
-                  href={link.url}
+                  href={publicUrl("/project-template.json")}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {link.label}
+                  Open project template
                   <span aria-hidden>↗</span>
                 </a>
-              ))}
-            </div>
-          </div>
-        </section>
+              </div>
+            )}
 
-        <section id="work" aria-labelledby="work-heading">
-          <h2 className="pf-section-title" id="work-heading">
-            <span>Work</span>
-          </h2>
-          {projects.length > 0 ? (
-            <div className="pf-grid">
-              {projects.map((project) => (
-              <button
-                key={project.id}
-                type="button"
-                className="pf-card pf-ripple"
-                aria-label={`View ${project.title}`}
-                onClick={() => setOpen(project)}
-              >
-                <div className="pf-card-media">
-                  {project.coverVideo ? (
-                    <video
-                      src={publicUrl(project.coverVideo)}
-                      poster={publicUrl(project.coverImage)}
-                      muted
-                      loop
-                      autoPlay
-                      playsInline
-                      preload="metadata"
-                      aria-hidden
-                    />
-                  ) : (
-                    <img src={publicUrl(project.coverImage)} alt="" loading="lazy" />
-                  )}
-                  <div className="pf-card-overlay" aria-hidden />
-                  <div className="pf-card-body">
-                    <h3 className="pf-card-title">{project.title}</h3>
-                  </div>
-                </div>
-              </button>
-              ))}
-            </div>
-          ) : (
-            <div className="pf-empty">
-              <h3>No projects yet</h3>
-              <p>
-                Add files to <code>public/images</code>, <code>public/videos</code>, or{" "}
-                <code>public/documents</code>, then paste a project object into{" "}
-                <code>src/data/portfolio.json</code>.
-              </p>
-              <p>
-                GIFs work directly when used as <code>coverImage</code> (example:{" "}
-                <code>/images/my-loop.gif</code>).
-              </p>
-              <a
-                className="pf-link-pill"
-                href={publicUrl("/project-template.json")}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Open project template
-                <span aria-hidden>↗</span>
-              </a>
-            </div>
-          )}
+            <aside
+              className="pf-about pf-intro pf-side-bio"
+              id="about"
+              aria-labelledby="about-heading"
+            >
+              <div>
+                <h1 className="pf-intro-name" id="about-heading">
+                  {profile.name}
+                </h1>
+                <p className="pf-intro-title">{profile.title}</p>
+                <p className="pf-intro-bio">{profile.bio}</p>
+              </div>
+              <div className="pf-links">
+                {profile.links.map((link) => (
+                  <a
+                    key={link.url}
+                    className="pf-link-pill"
+                    href={link.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {link.label}
+                    <span aria-hidden>↗</span>
+                  </a>
+                ))}
+              </div>
+            </aside>
+          </div>
         </section>
 
         <footer className="pf-footer">

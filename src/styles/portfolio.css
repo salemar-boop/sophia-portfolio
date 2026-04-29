@@ -138,7 +138,7 @@
 .pf-section-title {
   font-family: var(--font-serif);
   font-size: clamp(1.75rem, 3vw, 2.25rem);
-  margin: 2.25rem 0 1.25rem;
+  margin: 1.5rem 0 1rem;
 }
 
 .pf-section-title span {
@@ -149,6 +149,18 @@
   display: grid;
   gap: 1.4rem;
   align-items: start;
+}
+
+.pf-work-shell {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .pf-work-shell {
+    grid-template-columns: minmax(0, 1fr) 320px;
+    align-items: start;
+  }
 }
 
 .pf-empty {
@@ -186,7 +198,7 @@
 
 @media (min-width: 1024px) {
   .pf-grid {
-    grid-template-columns: repeat(3, minmax(230px, 1fr));
+    grid-template-columns: repeat(2, minmax(230px, 1fr));
     gap: 1.6rem;
   }
 }
@@ -194,11 +206,11 @@
 .pf-card {
   position: relative;
   border-radius: var(--radius-md);
-  overflow: hidden;
+  overflow: visible;
   border: 2px solid rgba(153, 196, 236, 0.55);
   background: #fffef8;
   text-align: left;
-  padding: 0;
+  padding: 0.35rem 0.35rem 0.6rem;
   cursor: pointer;
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.3s ease;
   box-shadow: 0 10px 20px rgba(102, 149, 191, 0.2);
@@ -226,6 +238,9 @@
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(143, 184, 223, 0.6);
+  background: #fff;
 }
 
 .pf-card-media img,
@@ -243,40 +258,13 @@
   transform: scale(1.05);
 }
 
-.pf-card-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    transparent 15%,
-    rgba(63, 95, 126, 0.46) 55%,
-    rgba(45, 66, 89, 0.72) 100%
-  );
-  opacity: 0.88;
-  transition: opacity 0.4s ease;
-}
-
-.pf-card:hover .pf-card-overlay {
-  opacity: 0.72;
-}
-
-.pf-card-body {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 1rem 1.1rem 1.15rem;
-}
-
 .pf-card-title {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
-  margin: 0;
-}
-
-.pf-card .pf-card-body .pf-card-title {
-  color: #fffefb;
-  text-shadow: 0 1px 10px rgba(30, 48, 69, 0.45);
+  font-size: 1.05rem;
+  margin: 0.55rem 0.2rem 0.1rem;
+  color: var(--accent-deep);
+  text-align: center;
+  line-height: 1.15;
 }
 
 .pf-about {
@@ -291,6 +279,33 @@
   );
   box-shadow: var(--shadow-soft), 0 0 0 1px rgba(255, 255, 255, 0.65) inset;
   backdrop-filter: blur(10px) saturate(1.03);
+}
+
+.pf-side-bio {
+  margin-top: 0;
+  position: sticky;
+  top: 5.2rem;
+}
+
+.pf-side-bio .pf-intro-name {
+  font-size: clamp(1.45rem, 3vw, 2rem);
+}
+
+.pf-side-bio .pf-intro-title {
+  font-size: 0.94rem;
+}
+
+.pf-side-bio .pf-intro-bio {
+  font-size: 0.95rem;
+  max-width: 100%;
+}
+
+@media (max-width: 1023px) {
+  .pf-side-bio {
+    position: static;
+    top: auto;
+    margin-top: 0.75rem;
+  }
 }
 
 @media (min-width: 768px) {

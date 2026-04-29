@@ -60,6 +60,21 @@ export default function App() {
                           preload="metadata"
                           aria-hidden
                         />
+                  ) : project.media.kind === "pdf" ? (
+                    <iframe
+                      className="pf-card-pdf"
+                      src={`${publicUrl(project.media.src)}#page=1&view=FitH`}
+                      title={`${project.title} preview`}
+                      aria-hidden
+                    />
+                  ) : project.media.kind === "pdfs" &&
+                    project.media.files.length > 0 ? (
+                    <iframe
+                      className="pf-card-pdf"
+                      src={`${publicUrl(project.media.files[0].src)}#page=1&view=FitH`}
+                      title={`${project.title} preview`}
+                      aria-hidden
+                    />
                       ) : (
                         <img src={publicUrl(project.coverImage)} alt="" loading="lazy" />
                       )}

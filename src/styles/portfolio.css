@@ -253,6 +253,14 @@
   filter: saturate(1.08) contrast(1.02) brightness(1.02);
 }
 
+.pf-card-pdf {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none;
+  background: #fff;
+}
+
 .pf-card:hover .pf-card-media img,
 .pf-card:hover .pf-card-media video {
   transform: scale(1.05);
@@ -285,19 +293,41 @@
   margin-top: 0;
   position: sticky;
   top: 5.2rem;
+  padding: 1rem 0.9rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px dashed rgba(133, 170, 207, 0.5);
+  box-shadow: 0 4px 14px rgba(108, 152, 196, 0.12);
+  opacity: 0.8;
 }
 
 .pf-side-bio .pf-intro-name {
-  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  margin-bottom: 0.2rem;
 }
 
 .pf-side-bio .pf-intro-title {
-  font-size: 0.94rem;
+  font-size: 0.78rem;
+  margin-bottom: 0.45rem;
+  opacity: 0.85;
 }
 
 .pf-side-bio .pf-intro-bio {
-  font-size: 0.95rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
   max-width: 100%;
+  color: rgba(79, 105, 131, 0.9);
+}
+
+.pf-side-bio .pf-links {
+  margin-top: 0.55rem;
+  gap: 0.45rem;
+}
+
+.pf-side-bio .pf-link-pill {
+  font-size: 0.76rem;
+  padding: 0.42rem 0.6rem;
+  border-radius: 999px;
 }
 
 @media (max-width: 1023px) {
@@ -305,6 +335,7 @@
     position: static;
     top: auto;
     margin-top: 0.75rem;
+    opacity: 0.92;
   }
 }
 

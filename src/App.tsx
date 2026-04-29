@@ -20,7 +20,7 @@ export default function App() {
     <div className="pf-app-bg">
       <main className="pf-page">
         <header className="pf-header">
-          <h1>{profile.name} - Projects</h1>
+          <h1>{profile.name}</h1>
         </header>
 
         <section id="work" aria-labelledby="work-heading">

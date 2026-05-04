@@ -30,21 +30,12 @@ export default function App() {
           <div className="pf-work-shell">
             {projects.length > 0 ? (
               <div className="pf-grid">
-                {projects.map((project, index) => {
-                  const sizeClass =
-                    index % 7 === 0
-                      ? "pf-card--feature"
-                      : index % 5 === 0
-                        ? "pf-card--wide"
-                        : index % 4 === 0
-                          ? "pf-card--tall"
-                          : "";
-
+                {projects.map((project) => {
                   return (
                     <button
                       key={project.id}
                       type="button"
-                      className={`pf-card pf-ripple ${sizeClass}`.trim()}
+                      className="pf-card pf-ripple"
                       aria-label={`View ${project.title}`}
                       onClick={() => setOpen(project)}
                     >

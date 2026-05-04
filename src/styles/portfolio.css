@@ -189,26 +189,25 @@
   overflow: hidden;
   border-radius: var(--radius-pin);
   background: #dfe9f2;
-  aspect-ratio: 4 / 5;
 }
 
 .pf-card-media img {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
-  object-fit: cover;
 }
 
 .pf-card-media video {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
 }
 
 .pf-card-pdf {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 3 / 4;
+  min-height: 140px;
   border: 0;
   pointer-events: none;
   background: var(--pin-surface);

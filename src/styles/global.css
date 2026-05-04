@@ -1,21 +1,25 @@
 ﻿:root {
   color-scheme: light;
-  /* Pinterest-inspired board */
-  --pin-bg: #f0f0f0;
-  --pin-bg-dots: rgba(0, 0, 0, 0.045);
-  --pin-surface: #ffffff;
-  --pin-topbar: rgba(255, 255, 255, 0.92);
-  --pin-border: rgba(0, 0, 0, 0.08);
-  --pin-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.06);
-  --pin-shadow-hover: 0 4px 14px rgba(0, 0, 0, 0.12);
-  --text: #111111;
-  --text-muted: #5c5c5c;
-  --text-soft: #8e8e8e;
-  --accent: #e60023;
-  --accent-hover: #ad081b;
-  --accent-soft: rgba(230, 0, 35, 0.1);
-  --ring: rgba(230, 0, 35, 0.45);
-  --modal-scrim: rgba(0, 0, 0, 0.55);
+  /* Cool slate + ice blue board */
+  --pin-bg: #e8eff5;
+  --pin-bg-dots: rgba(30, 64, 110, 0.055);
+  --pin-surface: #fbfdff;
+  --pin-topbar: rgba(251, 253, 255, 0.94);
+  --pin-border: rgba(60, 90, 120, 0.12);
+  --pin-shadow:
+    0 1px 2px rgba(15, 45, 75, 0.06),
+    0 4px 12px rgba(25, 55, 90, 0.06);
+  --pin-shadow-hover:
+    0 6px 20px rgba(25, 65, 110, 0.12),
+    0 2px 8px rgba(15, 45, 75, 0.06);
+  --text: #152232;
+  --text-muted: #4a5f78;
+  --text-soft: #6b8299;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-soft: rgba(37, 99, 235, 0.12);
+  --ring: rgba(37, 99, 235, 0.45);
+  --modal-scrim: rgba(15, 28, 45, 0.55);
   --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
   --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
   --radius-pill: 999px;

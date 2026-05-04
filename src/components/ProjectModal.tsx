@@ -77,7 +77,7 @@ export function ProjectModal({ project, onClose }: Props) {
           <button
             ref={closeRef}
             type="button"
-            className="pf-modal-close pf-ripple"
+            className="pf-modal-close"
             aria-label="Close"
             onClick={onClose}
           >
@@ -191,18 +191,8 @@ export function ProjectModal({ project, onClose }: Props) {
           )}
 
           {hasRichStage && showStills ? (
-            <div
-              className="pf-modal-stage"
-              style={{
-                marginTop: "0.85rem",
-                background: "rgba(253, 242, 245, 0.95)",
-              }}
-            >
-              <img
-                src={activeImageUrl}
-                alt=""
-                style={{ maxHeight: "min(38vh, 360px)", margin: "0 auto" }}
-              />
+            <div className="pf-modal-stage pf-modal-stills">
+              <img src={activeImageUrl} alt="" />
             </div>
           ) : null}
 
@@ -214,7 +204,7 @@ export function ProjectModal({ project, onClose }: Props) {
                 <button
                   key={src}
                   type="button"
-                  className="pf-thumb pf-ripple"
+                  className="pf-thumb"
                   onClick={() => setActiveIndex(i)}
                   aria-pressed={i === activeIndex}
                 >

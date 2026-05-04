@@ -186,7 +186,6 @@
 
 .pf-card-media {
   position: relative;
-  aspect-ratio: 3 / 4;
   overflow: hidden;
   border-radius: var(--radius-pin);
   background: #dfe9f2;
@@ -194,9 +193,8 @@
 
 .pf-card-media img {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
-  object-fit: cover;
 }
 
 .pf-card-media video {

@@ -15,6 +15,14 @@ export default function App() {
   const [open, setOpen] = useState<Project | null>(null);
   const projects = useSortedProjects(data.projects);
   const { profile } = data;
+  const rows = useMemo(() => {
+    const bucketCount = 3;
+    const buckets: Project[][] = Array.from({ length: bucketCount }, () => []);
+    projects.forEach((project, i) => {
+      buckets[i % bucketCount].push(project);
+    });
+    return buckets.filter((row) => row.length > 0);
+  }, [projects]);
 
   return (
     <div className="pf-app-bg">
@@ -48,48 +56,57 @@ export default function App() {
           </h2>
           <div className="pf-work-shell">
             {projects.length > 0 ? (
-              <div className="pf-grid">
-                {projects.map((project) => (
-                  <button
-                    key={project.id}
-                    type="button"
-                    className="pf-card"
-                    aria-label={`View ${project.title}`}
-                    onClick={() => setOpen(project)}
+              <div className="pf-row-stack" aria-label="Project rows">
+                {rows.map((row, rowIndex) => (
+                  <div
+                    key={`row-${rowIndex}`}
+                    className={`pf-row pf-row--${rowIndex % 2 === 0 ? "left" : "right"}`}
                   >
-                    <div className="pf-card-media">
-                      {project.coverVideo ? (
-                        <video
-                          src={publicUrl(project.coverVideo)}
-                          poster={publicUrl(project.coverImage)}
-                          muted
-                          loop
-                          autoPlay
-                          playsInline
-                          preload="metadata"
-                          aria-hidden
-                        />
-                      ) : project.media.kind === "pdf" ? (
-                        <iframe
-                          className="pf-card-pdf"
-                          src={`${publicUrl(project.media.src)}#page=1&view=FitH`}
-                          title={`${project.title} preview`}
-                          aria-hidden
-                        />
-                      ) : project.media.kind === "pdfs" &&
-                        project.media.files.length > 0 ? (
-                        <iframe
-                          className="pf-card-pdf"
-                          src={`${publicUrl(project.media.files[0].src)}#page=1&view=FitH`}
-                          title={`${project.title} preview`}
-                          aria-hidden
-                        />
-                      ) : (
-                        <img src={publicUrl(project.coverImage)} alt="" loading="lazy" />
-                      )}
+                    <div className="pf-row-track">
+                      {[...row, ...row].map((project, projectIndex) => (
+                        <button
+                          key={`${project.id}-${rowIndex}-${projectIndex}`}
+                          type="button"
+                          className="pf-card pf-row-card"
+                          aria-label={`View ${project.title}`}
+                          onClick={() => setOpen(project)}
+                        >
+                          <div className="pf-card-media">
+                            {project.coverVideo ? (
+                              <video
+                                src={publicUrl(project.coverVideo)}
+                                poster={publicUrl(project.coverImage)}
+                                muted
+                                loop
+                                autoPlay
+                                playsInline
+                                preload="metadata"
+                                aria-hidden
+                              />
+                            ) : project.media.kind === "pdf" ? (
+                              <iframe
+                                className="pf-card-pdf"
+                                src={`${publicUrl(project.media.src)}#page=1&view=FitH`}
+                                title={`${project.title} preview`}
+                                aria-hidden
+                              />
+                            ) : project.media.kind === "pdfs" &&
+                              project.media.files.length > 0 ? (
+                              <iframe
+                                className="pf-card-pdf"
+                                src={`${publicUrl(project.media.files[0].src)}#page=1&view=FitH`}
+                                title={`${project.title} preview`}
+                                aria-hidden
+                              />
+                            ) : (
+                              <img src={publicUrl(project.coverImage)} alt="" loading="lazy" />
+                            )}
+                          </div>
+                          <h3 className="pf-card-title">{project.title}</h3>
+                        </button>
+                      ))}
                     </div>
-                    <h3 className="pf-card-title">{project.title}</h3>
-                  </button>
+                  </div>
                 ))}
               </div>
             ) : (

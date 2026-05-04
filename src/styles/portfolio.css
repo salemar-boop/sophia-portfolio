@@ -120,34 +120,52 @@
   padding: 0 var(--masonry-gap);
 }
 
-.pf-grid {
-  column-count: 2;
-  column-gap: var(--masonry-gap);
-  margin: 0 auto;
+.pf-row-stack {
+  display: grid;
+  gap: 0.9rem;
   max-width: 1600px;
+  margin: 0 auto;
 }
 
-@media (min-width: 480px) {
-  .pf-grid {
-    column-count: 3;
+.pf-row {
+  overflow: hidden;
+  width: 100%;
+}
+
+.pf-row-track {
+  display: flex;
+  width: max-content;
+  gap: var(--masonry-gap);
+  will-change: transform;
+}
+
+.pf-row--left .pf-row-track {
+  animation: pf-marquee-left 42s linear infinite;
+}
+
+.pf-row--right .pf-row-track {
+  animation: pf-marquee-right 46s linear infinite;
+}
+
+.pf-row:hover .pf-row-track {
+  animation-play-state: paused;
+}
+
+@keyframes pf-marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - (var(--masonry-gap) / 2)));
   }
 }
 
-@media (min-width: 720px) {
-  .pf-grid {
-    column-count: 4;
+@keyframes pf-marquee-right {
+  from {
+    transform: translateX(calc(-50% - (var(--masonry-gap) / 2)));
   }
-}
-
-@media (min-width: 960px) {
-  .pf-grid {
-    column-count: 5;
-  }
-}
-
-@media (min-width: 1280px) {
-  .pf-grid {
-    column-count: 6;
+  to {
+    transform: translateX(0);
   }
 }
 
@@ -164,12 +182,12 @@
   transition:
     box-shadow 0.22s ease,
     transform 0.22s ease;
-  display: inline-block;
-  width: 100%;
-  margin: 0 0 var(--masonry-gap);
-  break-inside: avoid;
-  page-break-inside: avoid;
-  vertical-align: top;
+}
+
+.pf-row-card {
+  width: clamp(180px, 20vw, 300px);
+  margin: 0;
+  flex: 0 0 auto;
 }
 
 .pf-card:hover,

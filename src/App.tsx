@@ -69,6 +69,9 @@ export default function App() {
                           preload="metadata"
                           aria-hidden
                         />
+                      ) : project.id === "album-cover" ||
+                        project.id === "final-one-pdf" ? (
+                        <img src={publicUrl(project.coverImage)} alt="" loading="lazy" />
                       ) : project.media.kind === "pdf" ? (
                         <iframe
                           className="pf-card-pdf"

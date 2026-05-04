@@ -1,22 +1,20 @@
 ﻿.pf-app-bg {
   min-height: 100vh;
+  width: 100%;
   background: #ffffff;
 }
 
 .pf-page {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.5rem 1rem 3rem;
-}
-
-@media (min-width: 768px) {
-  .pf-page {
-    padding: 2rem 2rem 4rem;
-  }
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0.75rem 0 2rem;
+  box-sizing: border-box;
 }
 
 .pf-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
 }
 
 .pf-header h1 {
@@ -27,9 +25,14 @@
 
 .pf-section-title {
   font-size: 1rem;
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.65rem;
+  padding: 0 1rem;
   color: #666;
   font-weight: 500;
+}
+
+#work {
+  width: 100%;
 }
 
 .pf-section-title span {
@@ -44,6 +47,7 @@
   border: 1px solid #d8d8d8;
   border-radius: 10px;
   padding: 1rem;
+  margin: 0 1rem;
   background: #fff;
 }
 
@@ -187,6 +191,7 @@
 
 .pf-footer {
   margin-top: 1.5rem;
+  padding: 0 1rem;
   font-size: 0.82rem;
   color: #777;
 }

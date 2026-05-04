@@ -121,27 +121,33 @@
 }
 
 .pf-grid {
-  column-count: 1;
+  column-count: 2;
   column-gap: var(--masonry-gap);
   margin: 0 auto;
   max-width: 1600px;
 }
 
-@media (min-width: 700px) {
-  .pf-grid {
-    column-count: 2;
-  }
-}
-
-@media (min-width: 1200px) {
+@media (min-width: 480px) {
   .pf-grid {
     column-count: 3;
   }
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 720px) {
   .pf-grid {
     column-count: 4;
+  }
+}
+
+@media (min-width: 960px) {
+  .pf-grid {
+    column-count: 5;
+  }
+}
+
+@media (min-width: 1280px) {
+  .pf-grid {
+    column-count: 6;
   }
 }
 
@@ -180,17 +186,17 @@
 
 .pf-card-media {
   position: relative;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
   border-radius: var(--radius-pin);
-  aspect-ratio: 4 / 5;
   background: #dfe9f2;
 }
 
 .pf-card-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
+  object-fit: cover;
 }
 
 .pf-card-media video {
@@ -202,7 +208,8 @@
 
 .pf-card-pdf {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 3 / 4;
+  min-height: 140px;
   border: 0;
   pointer-events: none;
   background: var(--pin-surface);

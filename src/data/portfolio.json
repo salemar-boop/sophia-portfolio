@@ -47,18 +47,6 @@
       }
     },
     {
-      "id": "object-study-poster",
-      "title": "Object study poster",
-      "tagline": "Three-poster series shown as images.",
-      "description": "Object study poster set. Each composition is shown as a full image in the modal.",
-      "coverImage": "/images/object-study-1.jpg",
-      "gallery": [
-        "/images/object-study-2.jpg",
-        "/images/object-study-3.jpg"
-      ],
-      "media": { "kind": "none" }
-    },
-    {
       "id": "type-poster",
       "title": "Type Poster",
       "tagline": "Typography poster (PDF) with slide previews.",

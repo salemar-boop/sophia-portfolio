@@ -8,13 +8,18 @@ type Props = {
   onClose: () => void;
 };
 
+function dedupeSources(sources: string[]) {
+  return sources.filter((src, i, arr) => arr.indexOf(src) === i);
+}
+
 export function ProjectModal({ project, onClose }: Props) {
   const titleId = useId();
   const closeRef = useRef<HTMLButtonElement>(null);
-  const thumbSources = [project.coverImage, ...project.gallery].filter(
-    (src, i, arr) => arr.indexOf(src) === i
-  );
+  const thumbSources = dedupeSources([project.coverImage, ...project.gallery]);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const sidebarCopy =
+    project.about?.trim() || project.description;
 
   useEffect(() => {
     setActiveIndex(0);
@@ -44,17 +49,94 @@ export function ProjectModal({ project, onClose }: Props) {
   const hasVideoOrEmbed = mediaKind === "video" || mediaKind === "embed";
   const hasPdf = mediaKind === "pdf";
   const hasPdfs = mediaKind === "pdfs";
-  const hasRichStage = hasVideoOrEmbed || hasPdf || hasPdfs;
-
-  const showStills =
-    thumbSources.length > 1 ||
-    (hasVideoOrEmbed && project.gallery.length > 0) ||
-    (hasPdf && project.gallery.length > 0) ||
-    (hasPdfs && project.gallery.length > 0);
 
   const pdfSrc =
     mediaKind === "pdf" ? publicUrl(project.media.src) : "";
-  const activeImageUrl = publicUrl(thumbSources[activeIndex] ?? project.coverImage);
+
+  const activeImageUrl = publicUrl(
+    thumbSources[activeIndex] ?? project.coverImage
+  );
+
+  const pdfUsesImageHero =
+    hasPdf &&
+    (project.gallery.length > 0 || thumbSources.length > 1);
+
+  const showThumbStrip =
+    thumbSources.length > 1 &&
+    (mediaKind === "none" || (hasPdf && pdfUsesImageHero));
+
+  const renderVisual = () => {
+    if (mediaKind === "video") {
+      return (
+        <video
+          className="pf-modal-hero-media pf-video"
+          src={publicUrl(project.media.src)}
+          poster={
+            project.media.poster
+              ? publicUrl(project.media.poster)
+              : publicUrl(project.coverImage)
+          }
+          controls
+          playsInline
+        />
+      );
+    }
+
+    if (mediaKind === "embed") {
+      return (
+        <div className="pf-embed pf-modal-hero-embed">
+          <iframe
+            title={`${project.title} video`}
+            src={toEmbedSrc(project.media.src)}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
+      );
+    }
+
+    if (mediaKind === "pdfs") {
+      return (
+        <img
+          className="pf-modal-hero-media pf-modal-hero-img"
+          src={publicUrl(project.coverImage)}
+          alt=""
+        />
+      );
+    }
+
+    if (hasPdf && pdfUsesImageHero) {
+      return (
+        <img
+          className="pf-modal-hero-media pf-modal-hero-img"
+          src={activeImageUrl}
+          alt=""
+        />
+      );
+    }
+
+    if (hasPdf) {
+      return (
+        <img
+          className="pf-modal-hero-media pf-modal-hero-img"
+          src={publicUrl(project.coverImage)}
+          alt=""
+        />
+      );
+    }
+
+    if (mediaKind === "none") {
+      return (
+        <img
+          className="pf-modal-hero-media pf-modal-hero-img"
+          src={activeImageUrl}
+          alt=""
+        />
+      );
+    }
+
+    return null;
+  };
 
   return (
     <div className="pf-modal-root" role="presentation">
@@ -65,154 +147,96 @@ export function ProjectModal({ project, onClose }: Props) {
         onClick={onClose}
       />
       <div
-        className="pf-modal"
+        className="pf-modal pf-modal--split"
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
       >
-        <div className="pf-modal-header">
-          <div>
-            <h2 id={titleId}>{project.title}</h2>
-          </div>
-          <button
-            ref={closeRef}
-            type="button"
-            className="pf-modal-close"
-            aria-label="Close"
-            onClick={onClose}
-          >
-            ✕
-          </button>
-        </div>
-        <div className="pf-modal-body">
-          <p className="pf-modal-tagline">{project.tagline}</p>
+        <button
+          ref={closeRef}
+          type="button"
+          className="pf-modal-close pf-modal-close--floating"
+          aria-label="Close"
+          onClick={onClose}
+        >
+          ✕
+        </button>
 
-          {project.liveUrl ? (
-            <p className="pf-modal-live">
-              <a
-                className="pf-modal-cta"
-                href={project.liveUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Open live site
-                <span aria-hidden>↗</span>
-              </a>
-            </p>
-          ) : null}
+        <div className="pf-modal-split">
+          <div className="pf-modal-visual">{renderVisual()}</div>
 
-          {mediaKind === "pdf" ? (
-            <p className="pf-modal-live">
-              <a
-                className="pf-modal-cta"
-                href={pdfSrc}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Open PDF in new tab
-                <span aria-hidden>↗</span>
-              </a>
-            </p>
-          ) : null}
+          <aside className="pf-modal-aside" aria-label="Project details">
+            <h2 id={titleId} className="pf-modal-aside-title">
+              {project.title}
+            </h2>
+            <p className="pf-modal-tagline">{project.tagline}</p>
+            <p className="pf-modal-about">{sidebarCopy}</p>
 
-          {mediaKind === "pdfs" ? (
-            <div
-              className="pf-modal-live pf-modal-live--cluster"
-              role="group"
-              aria-label="Open PDFs in a new tab"
-            >
-              {project.media.files.map((file) => (
+            {project.liveUrl ? (
+              <p className="pf-modal-live">
                 <a
-                  key={file.src}
                   className="pf-modal-cta"
-                  href={publicUrl(file.src)}
+                  href={project.liveUrl}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Open {file.label}
+                  Open live site
                   <span aria-hidden>↗</span>
                 </a>
-              ))}
-            </div>
-          ) : null}
+              </p>
+            ) : null}
 
-          {hasRichStage ? (
-            mediaKind === "pdfs" ? (
-              <div className="pf-pdf-stack">
+            {mediaKind === "pdf" ? (
+              <p className="pf-modal-live">
+                <a
+                  className="pf-modal-cta"
+                  href={pdfSrc}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open PDF
+                  <span aria-hidden>↗</span>
+                </a>
+              </p>
+            ) : null}
+
+            {mediaKind === "pdfs" ? (
+              <div
+                className="pf-modal-live pf-modal-live--cluster"
+                role="group"
+                aria-label="Open PDFs in a new tab"
+              >
                 {project.media.files.map((file) => (
-                  <section key={file.src} className="pf-pdf-stack-block">
-                    <h3 className="pf-pdf-label">{file.label}</h3>
-                    <div className="pf-modal-stage">
-                      <iframe
-                        className="pf-pdf-frame pf-pdf-frame--stacked"
-                        title={`${project.title}: ${file.label}`}
-                        src={publicUrl(file.src)}
-                      />
-                    </div>
-                  </section>
+                  <a
+                    key={file.src}
+                    className="pf-modal-cta"
+                    href={publicUrl(file.src)}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Open {file.label}
+                    <span aria-hidden>↗</span>
+                  </a>
                 ))}
               </div>
-            ) : (
-              <div className="pf-modal-stage">
-                {mediaKind === "video" ? (
-                  <video
-                    className="pf-video"
-                    src={publicUrl(project.media.src)}
-                    poster={
-                      project.media.poster
-                        ? publicUrl(project.media.poster)
-                        : undefined
-                    }
-                    controls
-                    playsInline
-                  />
-                ) : mediaKind === "embed" ? (
-                  <div className="pf-embed">
-                    <iframe
-                      title={`${project.title} video`}
-                      src={toEmbedSrc(project.media.src)}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    />
-                  </div>
-                ) : mediaKind === "pdf" ? (
-                  <iframe
-                    className="pf-pdf-frame"
-                    title={`${project.title} (PDF)`}
-                    src={pdfSrc}
-                  />
-                ) : null}
+            ) : null}
+
+            {showThumbStrip ? (
+              <div className="pf-thumbs" aria-label="Gallery">
+                {thumbSources.map((src, i) => (
+                  <button
+                    key={src}
+                    type="button"
+                    className="pf-thumb"
+                    onClick={() => setActiveIndex(i)}
+                    aria-pressed={i === activeIndex}
+                  >
+                    <img src={publicUrl(src)} alt="" />
+                  </button>
+                ))}
               </div>
-            )
-          ) : (
-            <div className="pf-modal-stage">
-              <img src={activeImageUrl} alt="" />
-            </div>
-          )}
-
-          {hasRichStage && showStills ? (
-            <div className="pf-modal-stage pf-modal-stills">
-              <img src={activeImageUrl} alt="" />
-            </div>
-          ) : null}
-
-          <p className="pf-modal-copy">{project.description}</p>
-
-          {thumbSources.length > 1 ? (
-            <div className="pf-thumbs" aria-label="Gallery">
-              {thumbSources.map((src, i) => (
-                <button
-                  key={src}
-                  type="button"
-                  className="pf-thumb"
-                  onClick={() => setActiveIndex(i)}
-                  aria-pressed={i === activeIndex}
-                >
-                  <img src={publicUrl(src)} alt="" />
-                </button>
-              ))}
-            </div>
-          ) : null}
+            ) : null}
+          </aside>
         </div>
       </div>
     </div>

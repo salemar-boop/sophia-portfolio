@@ -13,6 +13,11 @@ export type Project = {
   title: string;
   tagline: string;
   description: string;
+  /**
+   * Short copy shown in the project modal sidebar (editable in portfolio.json).
+   * If omitted, `description` is shown instead.
+   */
+  about?: string;
   /** Poster / fallback when `coverVideo` is not used */
   coverImage: string;
   /** Optional looping preview on the project card (muted autoplay) */

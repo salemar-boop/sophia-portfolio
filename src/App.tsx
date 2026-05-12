@@ -16,7 +16,7 @@ export default function App() {
   const projects = useSortedProjects(data.projects);
   const { profile } = data;
   const rows = useMemo(() => {
-    const bucketCount = 3;
+    const bucketCount = 2;
     const buckets: Project[][] = Array.from({ length: bucketCount }, () => []);
     projects.forEach((project, i) => {
       buckets[i % bucketCount].push(project);

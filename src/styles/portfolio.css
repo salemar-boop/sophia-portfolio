@@ -15,8 +15,11 @@
   max-width: none;
   width: 100%;
   margin: 0;
-  padding: 0 0 2.5rem;
+  padding: 0 0 1rem;
   box-sizing: border-box;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 .pf-topbar {
@@ -109,27 +112,44 @@
   outline-offset: 2px;
 }
 
-/* ——— Masonry grid ——— */
+/* ——— Marquee rows (2 rows, fill viewport) ——— */
 #work {
   width: 100%;
   padding-top: var(--masonry-gap);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .pf-work-shell {
-  display: block;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
   padding: 0 var(--masonry-gap);
+  box-sizing: border-box;
 }
 
 .pf-row-stack {
+  flex: 1;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  min-height: min(calc(100dvh - 5.75rem), 900px);
   display: grid;
-  gap: 0.9rem;
-  max-width: 1600px;
-  margin: 0 auto;
+  grid-template-rows: 1fr 1fr;
+  gap: clamp(0.45rem, 1.2vw, 0.85rem);
+  align-content: stretch;
 }
 
 .pf-row {
   overflow: hidden;
   width: 100%;
+  min-height: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .pf-row-track {
@@ -185,9 +205,29 @@
 }
 
 .pf-row-card {
-  width: clamp(180px, 20vw, 300px);
+  width: clamp(200px, calc((100vw - 2.5rem) / 4.2), 380px);
   margin: 0;
   flex: 0 0 auto;
+  max-height: 100%;
+}
+
+.pf-row-card .pf-card-media {
+  max-height: min(42vh, 100%);
+  aspect-ratio: 4 / 3;
+}
+
+.pf-row-card .pf-card-media img,
+.pf-row-card .pf-card-media video {
+  max-height: min(42vh, 100%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.pf-row-card .pf-card-pdf {
+  max-height: min(42vh, 100%);
+  aspect-ratio: 3 / 4;
 }
 
 .pf-card:hover,

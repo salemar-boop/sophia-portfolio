@@ -91,33 +91,14 @@
       }
     },
     {
-      "id": "custom-typefaces",
-      "title": "Custom typefaces",
-      "tagline": "Original type design (PDF).",
-      "description": "Type design project exported from Word Final.",
-      "about": "Type design project exported from Word Final. Edit this text in portfolio.json (the \"about\" field).",
-      "coverImage": "/images/projects/custom-typefaces.jpg",
-      "gallery": [],
-      "media": {
-        "kind": "pdf",
-        "src": "/documents/custom-typefaces.pdf"
-      }
-    },
-    {
       "id": "pattern-series",
       "title": "Pattern series",
-      "tagline": "Two companion PDFs.",
-      "description": "Pattern project shown as two related PDFs.",
-      "about": "Pattern project shown as two related PDFs. Open each PDF from the buttons. Edit this text in portfolio.json (the \"about\" field).",
-      "coverImage": "/images/projects/pattern-series.png",
+      "tagline": "Animated patterns.",
+      "description": "Pattern exploration shown as an animated GIF.",
+      "about": "Animated pattern piece. Edit this text in portfolio.json (the \"about\" field).",
+      "coverImage": "/images/projects/patterns.gif",
       "gallery": [],
-      "media": {
-        "kind": "pdfs",
-        "files": [
-          { "label": "Final piece", "src": "/documents/patterns-finall.pdf" },
-          { "label": "9 patterns", "src": "/documents/patterns-9.pdf" }
-        ]
-      }
+      "media": { "kind": "none" }
     },
     {
       "id": "cookbook-recipe",

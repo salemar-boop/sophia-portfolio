@@ -46,9 +46,7 @@ export function ProjectModal({ project, onClose }: Props) {
   }, []);
 
   const mediaKind = project.media.kind;
-  const hasVideoOrEmbed = mediaKind === "video" || mediaKind === "embed";
   const hasPdf = mediaKind === "pdf";
-  const hasPdfs = mediaKind === "pdfs";
 
   const pdfSrc =
     mediaKind === "pdf" ? publicUrl(project.media.src) : "";

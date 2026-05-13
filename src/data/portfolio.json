@@ -91,12 +91,12 @@
       }
     },
     {
-      "id": "pattern-series",
-      "title": "Pattern series",
-      "tagline": "Animated patterns.",
-      "description": "Pattern exploration shown as an animated GIF.",
-      "about": "Animated pattern piece. Edit this text in portfolio.json (the \"about\" field).",
-      "coverImage": "/images/projects/patterns.gif",
+      "id": "patternsgif",
+      "title": "Pattern GIF",
+      "tagline": "Animated pattern piece.",
+      "description": "Pattern animation exported as a GIF from the port folder.",
+      "about": "Animated pattern GIF. Edit this text in portfolio.json (the \"about\" field).",
+      "coverImage": "/images/projects/patternsgif.gif",
       "gallery": [],
       "media": { "kind": "none" }
     },

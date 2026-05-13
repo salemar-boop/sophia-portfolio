@@ -23,7 +23,7 @@ const pairs = [
   ["port/final final 3.png", "public/images/projects/type-poster-03.png"],
   ["port/whimpy image.jpg", "public/images/projects/hot-sauce-whimpy.jpg"],
   ["port/VELVET IMAGE.jpg", "public/images/projects/hot-sauce-velvet.jpg"],
-  ["port/patternsgif.gif", "public/images/projects/patterns.gif"],
+  ["port/patternsgif.gif", "public/images/projects/patternsgif.gif"],
   ["port/cookbook.png", "public/images/projects/cookbook.png"],
   ["port/icons real.png", "public/images/projects/icons-project.png"],
   ["port/icons.jpg", "public/images/projects/icons-project-photo.jpg"],

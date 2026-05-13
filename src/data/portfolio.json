@@ -17,7 +17,7 @@
       "tagline": "Mixed-media clock inspired by Stephanie Garber",
       "description": "Interactive clock piece inspired by Once Upon a Broken Heart, focused on unlocking your own potential over time.",
       "about": "Interactive clock piece inspired by Once Upon a Broken Heart, focused on unlocking your own potential over time. Edit this text in portfolio.json (the \"about\" field).",
-      "coverImage": "/images/ouabh-clock.gif",
+      "coverImage": "/images/projects/ouabh-clock.gif",
       "gallery": [],
       "media": { "kind": "none" }
     },
@@ -27,13 +27,13 @@
       "tagline": "Motion piece",
       "description": "Standalone video project preview.",
       "about": "Standalone video project preview. Edit this text in portfolio.json (the \"about\" field).",
-      "coverImage": "/images/pokemon-playthrough-poster.jpg",
+      "coverImage": "/images/projects/pokemon-poster.jpg",
       "coverVideo": "/videos/pokemon-playthrough.mp4",
       "gallery": [],
       "media": {
         "kind": "video",
         "src": "/videos/pokemon-playthrough.mp4",
-        "poster": "/images/pokemon-playthrough-poster.jpg"
+        "poster": "/images/projects/pokemon-poster.jpg"
       }
     },
     {
@@ -42,7 +42,7 @@
       "tagline": "Album design project (PDF).",
       "description": "Final album cover project exported as a PDF.",
       "about": "Final album cover project exported as a PDF. Edit this text in portfolio.json (the \"about\" field).",
-      "coverImage": "/images/album-cover.png",
+      "coverImage": "/images/projects/album-cover.png",
       "gallery": [],
       "media": {
         "kind": "pdf",
@@ -55,10 +55,10 @@
       "tagline": "Typography poster (PDF) with slide previews.",
       "description": "Bodoni type poster project. PDF in the modal; additional spreads shown as images.",
       "about": "Bodoni type poster project. Use the thumbnails to flip spreads; open the PDF for the full file. Edit this text in portfolio.json (the \"about\" field).",
-      "coverImage": "/images/type-poster-hero.png",
+      "coverImage": "/images/projects/type-poster-01.png",
       "gallery": [
-        "/images/type-poster-slide-2.png",
-        "/images/type-poster-slide-3.png"
+        "/images/projects/type-poster-02.png",
+        "/images/projects/type-poster-03.png"
       ],
       "media": {
         "kind": "pdf",
@@ -71,8 +71,8 @@
       "tagline": "Two label directions shown as a gallery.",
       "description": "Hot sauce label study featuring the Whimpy and Velvet bottle concepts.",
       "about": "Hot sauce label study featuring the Whimpy and Velvet bottle concepts. Edit this text in portfolio.json (the \"about\" field).",
-      "coverImage": "/images/hot-sauce-whimpy.jpg",
-      "gallery": ["/images/hot-sauce-velvet.jpg"],
+      "coverImage": "/images/projects/hot-sauce-whimpy.jpg",
+      "gallery": ["/images/projects/hot-sauce-velvet.jpg"],
       "media": { "kind": "none" }
     },
     {
@@ -81,13 +81,13 @@
       "tagline": "Postcard GIF with fish animation.",
       "description": "Postcard artwork as a GIF; fish animation in the modal.",
       "about": "Postcard artwork as a GIF; fish animation plays in the modal. Edit this text in portfolio.json (the \"about\" field).",
-      "coverImage": "/images/postcards-art.gif",
+      "coverImage": "/images/projects/postcards.gif",
       "coverVideo": "/videos/postcards-fish.mp4",
-      "gallery": ["/images/postcards-art.gif"],
+      "gallery": ["/images/projects/postcards.gif"],
       "media": {
         "kind": "video",
         "src": "/videos/postcards-fish.mp4",
-        "poster": "/images/postcards-art.gif"
+        "poster": "/images/projects/postcards.gif"
       }
     },
     {
@@ -96,7 +96,7 @@
       "tagline": "Original type design (PDF).",
       "description": "Type design project exported from Word Final.",
       "about": "Type design project exported from Word Final. Edit this text in portfolio.json (the \"about\" field).",
-      "coverImage": "/images/custom-typefaces-cover.jpg",
+      "coverImage": "/images/projects/custom-typefaces.jpg",
       "gallery": [],
       "media": {
         "kind": "pdf",
@@ -109,7 +109,7 @@
       "tagline": "Two companion PDFs.",
       "description": "Pattern project shown as two related PDFs.",
       "about": "Pattern project shown as two related PDFs. Open each PDF from the buttons. Edit this text in portfolio.json (the \"about\" field).",
-      "coverImage": "/images/pattern-series-cover.png",
+      "coverImage": "/images/projects/pattern-series.png",
       "gallery": [],
       "media": {
         "kind": "pdfs",
@@ -125,7 +125,7 @@
       "tagline": "Recipe layout (PDF).",
       "description": "Recipe design for my mother's banana bread.",
       "about": "Recipe design for my mother's banana bread. Edit this text in portfolio.json (the \"about\" field).",
-      "coverImage": "/images/cookbook-cover.png",
+      "coverImage": "/images/projects/cookbook.png",
       "gallery": [],
       "media": {
         "kind": "pdf",
@@ -138,7 +138,7 @@
       "tagline": "Animated poster.",
       "description": "GIF poster piece.",
       "about": "GIF poster piece. Edit this text in portfolio.json (the \"about\" field).",
-      "coverImage": "/images/lip-poster.gif",
+      "coverImage": "/images/projects/lip-poster.gif",
       "gallery": [],
       "media": { "kind": "none" }
     },
@@ -148,8 +148,8 @@
       "tagline": "Single-page design (PDF).",
       "description": "Additional layout work exported as a PDF.",
       "about": "Icons and layout work exported as a PDF. Use thumbnails to compare versions; open the PDF for the full file. Edit this text in portfolio.json (the \"about\" field).",
-      "coverImage": "/images/icons-project-cover.png",
-      "gallery": ["/images/icons-project-photo.jpg"],
+      "coverImage": "/images/projects/icons-project.png",
+      "gallery": ["/images/projects/icons-project-photo.jpg"],
       "media": {
         "kind": "pdf",
         "src": "/documents/final-1.pdf"
@@ -161,7 +161,7 @@
       "tagline": "Illustration / layout.",
       "description": "Bubblegum-themed graphic piece from the port folder.",
       "about": "Bubblegum-themed graphic piece. Edit this text in portfolio.json (the \"about\" field).",
-      "coverImage": "/images/bubblegum.png",
+      "coverImage": "/images/projects/bubblegum.png",
       "gallery": [],
       "media": { "kind": "none" }
     },
@@ -171,7 +171,7 @@
       "tagline": "Palette and composition.",
       "description": "Color-focused design study from the port folder.",
       "about": "Color-focused design study. Edit this text in portfolio.json (the \"about\" field).",
-      "coverImage": "/images/color-study.png",
+      "coverImage": "/images/projects/color-study.png",
       "gallery": [],
       "media": { "kind": "none" }
     },
@@ -181,7 +181,7 @@
       "tagline": "Spread preview.",
       "description": "Magazine-style layout preview from the port folder.",
       "about": "Magazine-style layout preview. Edit this text in portfolio.json (the \"about\" field).",
-      "coverImage": "/images/magazine-layout.png",
+      "coverImage": "/images/projects/magazine.png",
       "gallery": [],
       "media": { "kind": "none" }
     },
@@ -191,7 +191,7 @@
       "tagline": "Motion GIF.",
       "description": "Animated GIF piece from the port folder.",
       "about": "Animated GIF piece. Edit this text in portfolio.json (the \"about\" field).",
-      "coverImage": "/images/sophia-zg.gif",
+      "coverImage": "/images/projects/sophia-zg.gif",
       "gallery": [],
       "media": { "kind": "none" }
     }

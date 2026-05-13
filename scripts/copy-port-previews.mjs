@@ -1,8 +1,7 @@
 /**
- * Copies project art from /port into /public/images with stable, semantic filenames
- * (JPEG / PNG / GIF — no generic preview-* names). Run after adding or changing files in port/:
- *
- *   npm run copy-port
+ * Copies project art from /port into /public/images/projects/ (and one video).
+ * Uses JPEG/GIF originals where they exist; PNG only when that is the source file.
+ * Run: npm run copy-port
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -11,39 +10,27 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
 
-/** [source under repo root, destination under repo root] */
 const pairs = [
-  // Once Upon a Broken Heart Clock
-  ["port/clock-gif.gif", "public/images/ouabh-clock.gif"],
-  // Pokemon playthrough (card + video poster)
-  ["port/FINAL TURN IN 2.jpg", "public/images/pokemon-playthrough-poster.jpg"],
-  // Album cover (PDF companion)
-  ["port/album.png", "public/images/album-cover.png"],
-  // Type poster + spreads
-  ["port/look poster.png", "public/images/type-poster-hero.png"],
-  ["port/final final 2.png", "public/images/type-poster-slide-2.png"],
-  ["port/final final 3.png", "public/images/type-poster-slide-3.png"],
-  // Hot sauce labels
-  ["port/whimpy image.jpg", "public/images/hot-sauce-whimpy.jpg"],
-  ["port/VELVET IMAGE.jpg", "public/images/hot-sauce-velvet.jpg"],
-  // Postcards
-  ["port/postcard-gif.gif", "public/images/postcards-art.gif"],
-  // Custom typefaces (Word Final companion)
-  ["port/1765297838.013812.jpg", "public/images/custom-typefaces-cover.jpg"],
-  // Pattern series (card art — PDFs stay in /documents)
-  ["port/icons.png", "public/images/pattern-series-cover.png"],
-  // Cookbook
-  ["port/cookbook.png", "public/images/cookbook-cover.png"],
-  // Lip poster GIF
-  ["port/lip-poster-gif.gif", "public/images/lip-poster.gif"],
-  // Icons project (PDF companion)
-  ["port/icons real.png", "public/images/icons-project-cover.png"],
-  ["port/icons.jpg", "public/images/icons-project-photo.jpg"],
-  // Standalone pieces
-  ["port/bubblegum work.png", "public/images/bubblegum.png"],
-  ["port/color.png", "public/images/color-study.png"],
-  ["port/mag.png", "public/images/magazine-layout.png"],
-  ["port/sophia-zg.gif", "public/images/sophia-zg.gif"],
+  ["port/clock-gif.gif", "public/images/projects/ouabh-clock.gif"],
+  ["port/postcard-gif.gif", "public/images/projects/postcards.gif"],
+  ["port/lip-poster-gif.gif", "public/images/projects/lip-poster.gif"],
+  ["port/sophia-zg.gif", "public/images/projects/sophia-zg.gif"],
+  ["port/FINAL TURN IN 2.jpg", "public/images/projects/pokemon-poster.jpg"],
+  ["port/20260223-2206-07.5363944 (1).mp4", "public/videos/pokemon-playthrough.mp4"],
+  ["port/album.png", "public/images/projects/album-cover.png"],
+  ["port/final final pp1.png", "public/images/projects/type-poster-01.png"],
+  ["port/final final 2.png", "public/images/projects/type-poster-02.png"],
+  ["port/final final 3.png", "public/images/projects/type-poster-03.png"],
+  ["port/whimpy image.jpg", "public/images/projects/hot-sauce-whimpy.jpg"],
+  ["port/VELVET IMAGE.jpg", "public/images/projects/hot-sauce-velvet.jpg"],
+  ["port/1765297838.013812.jpg", "public/images/projects/custom-typefaces.jpg"],
+  ["port/icons.png", "public/images/projects/pattern-series.png"],
+  ["port/cookbook.png", "public/images/projects/cookbook.png"],
+  ["port/icons real.png", "public/images/projects/icons-project.png"],
+  ["port/icons.jpg", "public/images/projects/icons-project-photo.jpg"],
+  ["port/bubblegum work.png", "public/images/projects/bubblegum.png"],
+  ["port/color.png", "public/images/projects/color-study.png"],
+  ["port/mag.png", "public/images/projects/magazine.png"],
 ];
 
 let copied = 0;
@@ -58,4 +45,4 @@ for (const [relFrom, relTo] of pairs) {
   fs.copyFileSync(from, to);
   copied += 1;
 }
-console.log(`[copy-port] copied ${copied} file(s) into public/images/`);
+console.log(`[copy-port] copied ${copied} file(s).`);

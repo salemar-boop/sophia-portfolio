@@ -63,47 +63,33 @@ export default function App() {
                     className={`pf-row pf-row--${rowIndex % 2 === 0 ? "left" : "right"}`}
                   >
                     <div className="pf-row-track">
-                      {[...row, ...row].map((project, projectIndex) => (
-                        <button
-                          key={`${project.id}-${rowIndex}-${projectIndex}`}
-                          type="button"
-                          className="pf-card pf-row-card"
-                          aria-label={`View ${project.title}`}
-                          onClick={() => setOpen(project)}
+                      {[0, 1].map((dup) => (
+                        <div
+                          key={`set-${rowIndex}-${dup}`}
+                          className="pf-row-set"
+                          aria-hidden={dup === 1 ? true : undefined}
                         >
-                          <div className="pf-card-media">
-                            {project.coverVideo ? (
-                              <video
-                                src={publicUrl(project.coverVideo)}
-                                poster={publicUrl(project.coverImage)}
-                                muted
-                                loop
-                                autoPlay
-                                playsInline
-                                preload="metadata"
-                                aria-hidden
-                              />
-                            ) : project.media.kind === "pdf" ? (
-                              <iframe
-                                className="pf-card-pdf"
-                                src={`${publicUrl(project.media.src)}#page=1&view=FitH`}
-                                title={`${project.title} preview`}
-                                aria-hidden
-                              />
-                            ) : project.media.kind === "pdfs" &&
-                              project.media.files.length > 0 ? (
-                              <iframe
-                                className="pf-card-pdf"
-                                src={`${publicUrl(project.media.files[0].src)}#page=1&view=FitH`}
-                                title={`${project.title} preview`}
-                                aria-hidden
-                              />
-                            ) : (
-                              <img src={publicUrl(project.coverImage)} alt="" loading="lazy" />
-                            )}
-                          </div>
-                          <h3 className="pf-card-title">{project.title}</h3>
-                        </button>
+                          {row.map((project) => (
+                            <button
+                              key={`${project.id}-${rowIndex}-${dup}`}
+                              type="button"
+                              className="pf-card pf-row-card"
+                              aria-label={`View ${project.title}`}
+                              onClick={() => setOpen(project)}
+                            >
+                              <div className="pf-card-media">
+                                <img
+                                  src={publicUrl(project.coverImage)}
+                                  alt=""
+                                  loading="eager"
+                                  decoding="async"
+                                  draggable={false}
+                                />
+                              </div>
+                              <h3 className="pf-card-title">{project.title}</h3>
+                            </button>
+                          ))}
+                        </div>
                       ))}
                     </div>
                   </div>

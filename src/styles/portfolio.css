@@ -154,9 +154,22 @@
 
 .pf-row-track {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   width: max-content;
+  gap: 0;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  isolation: isolate;
+}
+
+.pf-row-set {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
   gap: var(--masonry-gap);
-  will-change: transform;
+  flex: 0 0 auto;
 }
 
 .pf-row--left .pf-row-track {
@@ -173,19 +186,27 @@
 
 @keyframes pf-marquee-left {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translateX(calc(-50% - (var(--masonry-gap) / 2)));
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
 @keyframes pf-marquee-right {
   from {
-    transform: translateX(calc(-50% - (var(--masonry-gap) / 2)));
+    transform: translate3d(-50%, 0, 0);
   }
   to {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-row--left .pf-row-track,
+  .pf-row--right .pf-row-track {
+    animation: none;
+    transform: none;
   }
 }
 
@@ -199,9 +220,23 @@
   padding: 0;
   cursor: pointer;
   box-shadow: var(--pin-shadow);
-  transition:
-    box-shadow 0.22s ease,
-    transform 0.22s ease;
+  transition: box-shadow 0.22s ease;
+}
+
+.pf-row-card:hover,
+.pf-row-card:focus-visible {
+  transform: none;
+}
+
+.pf-card:hover,
+.pf-card:focus-visible {
+  box-shadow: var(--pin-shadow-hover);
+  outline: none;
+}
+
+.pf-card:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
 }
 
 .pf-row-card {
@@ -216,30 +251,12 @@
   aspect-ratio: 4 / 3;
 }
 
-.pf-row-card .pf-card-media img,
-.pf-row-card .pf-card-media video {
+.pf-row-card .pf-card-media img {
   max-height: min(42vh, 100%);
   width: 100%;
   height: 100%;
   object-fit: cover;
   aspect-ratio: 4 / 3;
-}
-
-.pf-row-card .pf-card-pdf {
-  max-height: min(42vh, 100%);
-  aspect-ratio: 3 / 4;
-}
-
-.pf-card:hover,
-.pf-card:focus-visible {
-  box-shadow: var(--pin-shadow-hover);
-  transform: translateY(-2px);
-  outline: none;
-}
-
-.pf-card:focus-visible {
-  outline: 2px solid var(--ring);
-  outline-offset: 3px;
 }
 
 .pf-card-media {
